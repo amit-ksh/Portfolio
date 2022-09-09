@@ -30,8 +30,8 @@
 </template>
 
 <script>
-// eslint-disable-next-line import/no-named-as-default
 import gsap from 'gsap'
+import OrbitControls from 'orbit-controls-es6';
 import {
   PlaneGeometry,
   BufferAttribute,
@@ -48,7 +48,6 @@ import {
   Float32BufferAttribute,
   Points,
 } from 'three';
-import OrbitControls from 'orbit-controls-es6'
 
 export default {
   name: 'IndexPage',
@@ -124,7 +123,6 @@ export default {
     renderer.setPixelRatio(devicePixelRatio)
     document.body.appendChild(renderer.domElement)
 
-    // eslint-disable-next-line no-new
     new OrbitControls(camera, renderer.domElement)
     camera.position.z = 50
 
