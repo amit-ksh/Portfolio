@@ -1,31 +1,34 @@
 <template>
-  <div
-    id="container"
-    class="absolute text-white text-center uppercase w-full max-w-2xl px-6"
-    style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
-  >
-    <h1
-      id="amit"
-      class="font-space-mono text-md tracking-wide opacity-0"
-      style="transform: translateY(30px)"
+  <div>
+    <canvas ref="canvas"></canvas>
+    <div
+      id="container"
+      class="absolute text-white text-center uppercase w-full max-w-2xl px-6"
+      style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
     >
-      Amit Kumar Sharma
-    </h1>
-    <p
-      id="oneWithAn"
-      class="font-exo text-4xl opacity-0"
-      style="transform: translateY(30px)"
-    >
-      One with an everlasting desire for the unknown & untold
-    </p>
-    <a
-      id="viewWorkBtn"
-      href="https://chriscourses.com/"
-      class="border px-4 py-2 rounded-lg text-sm font-space-mono mt-8 hover:bg-white hover:text-gray-800 inline-block opacity-0"
-      style="transform: translateY(30px)"
-    >
-      View Work
-    </a>
+      <h1
+        id="amit"
+        class="font-space-mono text-md tracking-wide opacity-0"
+        style="transform: translateY(30px)"
+      >
+        Amit Kumar Sharma
+      </h1>
+      <p
+        id="oneWithAn"
+        class="font-exo text-4xl opacity-0"
+        style="transform: translateY(30px)"
+      >
+        One with an everlasting desire for the unknown & untold
+      </p>
+      <a
+        id="viewWorkBtn"
+        href="https://chriscourses.com/"
+        class="border px-4 py-2 rounded-lg text-sm font-space-mono mt-8 hover:bg-white hover:text-gray-800 inline-block opacity-0"
+        style="transform: translateY(30px)"
+      >
+        View Work
+      </a>
+    </div>
   </div>
 </template>
 
@@ -117,11 +120,12 @@ export default {
       0.1,
       1000
     )
-    const renderer = new WebGLRenderer()
+    const renderer = new WebGLRenderer({
+      canvas: this.$refs.canvas
+    })
 
     renderer.setSize(innerWidth, innerHeight)
     renderer.setPixelRatio(devicePixelRatio)
-    document.body.appendChild(renderer.domElement)
 
     new OrbitControls(camera, renderer.domElement)
     camera.position.z = 50
@@ -300,7 +304,7 @@ export default {
         duration: 1.5,
         delay: 0.5,
         onComplete: () => {
-          window.location = 'https://chriscourses.com/'
+          this.$router.push('/work');
         },
       })
     })
