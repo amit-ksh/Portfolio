@@ -119,8 +119,8 @@ export default {
             title: 'Portfolio',
             description: 'Personal site showcasing my projects and online resume.',
             url: {
-                github: 'https://github.com/amit-ksh/Modern-Three.js-for-Real-Websites',
-                website: 'https://my-threejs-portfolio.netlify.app',
+                github: 'https://github.com/amit-ksh/Portfolio/',
+                website: 'https://amit-ksh.netlify.app/projects',
             }
         },
         ]
