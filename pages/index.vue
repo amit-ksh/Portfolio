@@ -21,12 +21,12 @@
         One with an everlasting desire for the unknown & untold
       </p>
       <a
-        id="viewWorkBtn"
-        href="https://chriscourses.com/"
+        id="viewProjectsBtn"
+        href=""
         class="border px-4 py-2 rounded-lg text-sm font-space-mono mt-8 hover:bg-white hover:text-gray-800 inline-block opacity-0"
         style="transform: translateY(30px)"
       >
-        View Work
+        View Projects
       </a>
     </div>
   </div>
@@ -275,7 +275,7 @@ export default {
       ease: 'expo',
     })
 
-    gsap.to('#viewWorkBtn', {
+    gsap.to('#viewProjectsBtn', {
       opacity: 1,
       y: 0,
       duration: 1.5,
@@ -283,7 +283,7 @@ export default {
       ease: 'expo',
     })
 
-    document.querySelector('#viewWorkBtn').addEventListener('click', (e) => {
+    document.querySelector('#viewProjectsBtn').addEventListener('click', (e) => {
       e.preventDefault()
       gsap.to('#container', {
         opacity: 0,
@@ -307,7 +307,7 @@ export default {
         duration: 1.5,
         delay: 0.5,
         onComplete: () => {
-          this.$router.push('/work');
+          this.$router.push('/projects');
         },
       })
     })
