@@ -43,6 +43,7 @@
 
 <script setup>
 import gsap from 'gsap'
+import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import {
   PlaneGeometry,
   BufferAttribute,
@@ -128,14 +129,14 @@ onMounted(() => {
     0.1,
     1000
   )
+
   const renderer = new WebGLRenderer({
     canvas: canvas.value
   })
-
   renderer.setSize(innerWidth, innerHeight)
   renderer.setPixelRatio(devicePixelRatio)
 
-  // new OrbitControls(camera, renderer.domElement)
+  new OrbitControls(camera, renderer.domElement)
   camera.position.z = 50
 
   const planeGeometry = new PlaneGeometry(
@@ -259,6 +260,12 @@ onMounted(() => {
   }
 
   animate()
+
+  gsap.to(camera.rotation, {
+    x: 1,
+    ease: 'power3.inOut',
+    duration: 2,
+  })
 
   addEventListener('mousemove', (event) => {
     mouse.x = (event.clientX / innerWidth) * 2 - 1
