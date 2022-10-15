@@ -1,4 +1,6 @@
-export default {
+// https://v3.nuxtjs.org/api/configuration/nuxt.config
+
+export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Amit Kumar Sharma',
@@ -15,7 +17,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['@/assets/css/main.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -25,28 +27,19 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
-    [
-      '@nuxtjs/google-fonts',
-      {
-        families: {
-          'Exo+2': {
-            ital: [700]
-          },
-          'Space+Mono': true
-        }
-      }
-    ],
-    '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
-  
+  build: {
+    postcss: {
+      postcssOptions: require('./postcss.config')
+    },
+  },
+
   publicRuntimeConfig: {
     NODE_ENV: process.env.NODE_ENV
   }
-}
+})
