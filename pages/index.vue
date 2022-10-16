@@ -43,7 +43,7 @@
 
 <script setup>
 import gsap from 'gsap'
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import {
   PlaneGeometry,
   BufferAttribute,
@@ -261,6 +261,7 @@ onMounted(() => {
 
   animate()
 
+  // page load animations
   gsap.to(camera.rotation, {
     x: 1,
     ease: 'power3.inOut',
