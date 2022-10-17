@@ -261,13 +261,6 @@ onMounted(() => {
 
   animate()
 
-  // page load animations
-  gsap.to(camera.rotation, {
-    x: 1,
-    ease: 'power3.inOut',
-    duration: 2,
-  })
-
   addEventListener('mousemove', (event) => {
     mouse.x = (event.clientX / innerWidth) * 2 - 1
     mouse.y = -(event.clientY / innerHeight) * 2 + 1
