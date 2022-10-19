@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Socials class="top-2 right-2" />
-
+    <Navbar />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

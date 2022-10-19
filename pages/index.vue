@@ -1,8 +1,10 @@
 <template>
   <main>
+    <Socials class="top-2 right-2" />
+    
     <canvas ref="canvas"></canvas>
 
-    <div id="container" ref="containerRef"
+    <div id="about" ref="containerRef"
       class="absolute text-white w-full max-w-2xl px-6"
       style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
     >
@@ -25,18 +27,6 @@
         I've worked on plenty of projects including REST APIs, Websites and CLIs.
         I'm currently focusing on participating in developer friendly events, hackathons and contributing to opensource projects & softwares.
       </p>
-
-      <a
-        ref="viewProjectsBtn"
-        href=""
-        class="
-          border px-4 py-2 rounded-lg font-space-mono mt-8 inline-block font-bold text-lg
-          border-white hover:bg-white hover:text-gray-800
-        "
-        style="transform: translateY(30px)"
-      >
-        View Projects
-      </a>
     </div>
   </main>
 </template>
@@ -68,7 +58,6 @@ const containerRef = ref()
 const introRef = ref()
 const whoAmIRef = ref()
 const summaryRef = ref()
-const viewProjectsBtn = ref()
 
 onMounted(() => {
   const world = {
@@ -288,33 +277,6 @@ onMounted(() => {
     delay: 0.6,
     ease: 'expo',
   })
-
-  viewProjectsBtn.value.addEventListener('click', (e) => {
-      e.preventDefault()
-      gsap.to(containerRef.value, {
-        opacity: 0,
-      })
-      gsap.to(camera.position, {
-        z: 20,
-        ease: 'power3.inOut',
-        duration: 2,
-      })
-      gsap.to(camera.rotation, {
-        x: Math.PI / 2,
-        ease: 'power3.inOut',
-        duration: 2,
-      })
-      gsap.to(camera.position, {
-        y: 1000,
-        ease: 'power3.in',
-        duration: 1.5,
-        delay: 0.5,
-        onComplete: () => {
-          router.push('/projects');
-        },
-      })
-  })
-
 
   window.addEventListener('resize', (e) => {
     renderer.setSize(innerWidth, innerHeight)
