@@ -13,7 +13,7 @@
         class="font-space-mono mb-4 text-2xl tracking-wide opacity-0"
         style="transform: translateY(30px);"
       >
-        Hey👋! I'm Amit Kumar Sharma
+        Hey👋! I'm <span class="font-bold">Amit Kumar Sharma</span>
       </h1>
       <p id="who-am-i"
         ref="whoAmIRef"
@@ -25,7 +25,7 @@
       <p id="summary" ref="summaryRef" class="opacity-0">
         Over the last two years, I've gained expertise in modern tech stacks like React, Next, Vue, NodeJS and PostgreSQL.
         I've worked on plenty of projects including REST APIs, Websites and CLIs.
-        I'm currently focusing on participating in developer friendly events, hackathons and contributing to opensource projects & softwares.
+        I'm currently focusing on participating in developer friendly events and contributing to opensource projects & softwares.
       </p>
     </div>
   </main>

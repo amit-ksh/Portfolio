@@ -1,8 +1,8 @@
 <template>
-  <div ref="socialsRef" class="absolute bg-white rounded-lg py-3 pr-8 pl-6 z-50">
+  <div ref="socialsRef" class="absolute bg-white rounded-lg py-3 px-6 z-50">
     <h3 class="mb-2 text-lg text-[#009ffd] font-bold font-exo">Connect with me!</h3>
 
-    <div class="flex justify-between align-middle gap-3 w-8 h-8">
+    <div class="flex justify-between align-middle gap-3">
       <a v-for="social in socials" :key="social.name" 
         :href="social.url"
         class="block cursor-pointer focus:scale-110 hover:scale-110 transition duration-200" 

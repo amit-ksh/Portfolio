@@ -14,11 +14,11 @@
           id="projects"
           ref="projectsRef"
           v-for="project in projects"
-          :key="project.title"
+          :key="project.title   "
           class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4"
           style="transform: translateX(-100vw)"
         >
-          <div class="c-card flex flex-col h-full bg-white shadow-md hover:shadow-xl rounded-lg overflow-hidden">
+          <div class="c-card flex flex-col h-full bg-white shadow-md hover:shadow-xl focus:shadow-xl rounded-lg overflow-hidden">
               <div class="relative pb-48 overflow-hidden">
                   <img class="absolute inset-0 h-full w-full object-cover" :src="project.image.url" :alt="project.title">
               </div>
@@ -31,7 +31,10 @@
                   <a
                   v-if="project.url.github"
                   :href="project.url.github"
-                  class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+                  class="
+                    ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300
+                    focus:text-slate-500 dark:focus:text-slate-300
+                  "
                   target="_blank"
                   >
                       <GithubLogo :label="project.title + ' on GitHub'" class="w-5 h-5" />
@@ -40,7 +43,10 @@
                   <a
                   v-if="project.url.website"
                   :href="project.url.website"
-                  class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300"
+                  class="
+                    ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300
+                   focus:text-slate-500 dark:focus:text-slate-300
+                  "
                   target="_blank"
                   >
                       <WebLogo :label="project.title + '\'s Website'" class="w-5 h-5" />
@@ -104,6 +110,7 @@ const projects = [
     description: 'A python package that helps to analyze the Gaussian and Binomial Distributions',
     url: {
       github: 'https://github.com/amit-ksh/Udacity-AI-Programming-with-Python/tree/main/mini-projects/GnB_Distribution',
+      website: 'https://pypi.org/project/gnb-distributions-analyzer/'
     }
   },
   {

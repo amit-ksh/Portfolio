@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-2 left-[50%] w-[80vw] md:w-[450px] z-50" style="translate: -50%">
+  <div class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] z-50" style="translate: -50%">
     <div class="max-w-7xl mx-auto">
       <div 
         ref="openBtn" 
@@ -33,12 +33,12 @@
         "
         ></div>
         <div class="
-          bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative md:px-4 p-6 bg-white rounded-lg 
-          leading-none flex items-top justify-start space-x-6
+          bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative bg-white rounded-lg 
+          leading-none flex items-top justify-center align-middle space-x-6 py-4 px-6
           "
         >
-          <div class="w-[100%] flex flex-col gap-4">
-            <div class="flex justify-end">
+          <div class="w-[100%] flex flex-col">
+            <div class="flex justify-end mb-4 md:hidden">
               <CloseButton ref="closeBtn" @click="closeNavbar" class="md:hidden" />
             </div>
             <ul class="flex flex-col md:flex-row align-middle justify-center gap-4 font-semibold">
@@ -46,8 +46,8 @@
                 v-for="route in routes" 
                 :key="route.name"
                 class="
-                text-white text-sm md:text-lg rounded-lg border-2 border-white
-                hover:bg-white hover:scale-105 transition hover:text-blue-500 text-center
+                text-white text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500
+                hover:bg-white focus:bg-white hover:scale-105 focus:text-blue-500 text-center
                 "  
               >
                 <NuxtLink :to="route.url" class="block py-2 px-4 cursor-pointer">{{ route.name }}</NuxtLink>
