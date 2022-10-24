@@ -33,7 +33,7 @@
         "
         ></div>
         <div class="
-          bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative bg-white rounded-lg 
+          bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative rounded-lg 
           leading-none flex items-top justify-center align-middle space-x-6 py-4 px-6
           "
         >
@@ -66,7 +66,7 @@ import gsap from 'gsap';
 const routes = [
   {
     name: 'About Me',
-    url: '/#about',
+    url: '/about',
   },
   {
     name: 'My Work',

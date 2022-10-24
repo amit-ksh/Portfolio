@@ -5,28 +5,38 @@
     <canvas ref="canvas"></canvas>
 
     <div id="about" ref="containerRef"
-      class="absolute text-white w-full max-w-2xl px-6"
+      class="absolute w-full max-w-2xl px-6"
       style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
     >
       <h1 id="intro"
         ref="introRef"
-        class="font-space-mono mb-4 text-2xl tracking-wide opacity-0"
-        style="transform: translateY(30px);"
+        class="font-mono mb-4 text-2xl md:text-4xl tracking-wide opacity-0 text-white"
+        style="translate: 0 30px;"
       >
         Hey👋! I'm <span class="font-bold">Amit Kumar Sharma</span>
       </h1>
-      <p id="who-am-i"
-        ref="whoAmIRef"
-        class="mb-5 opacity-0"
+      <h3 
+        ref="roleRef" 
+        class="mb-4 font-exo text-xl md:text-2xl font-semibold tracking-wide text-white opacity-0"
+        style="translate: 0 30px;"  
       >
-        A 21 year old student, self-motivated tech enthusiast, full-stack developer and a ML enthusiast.
-        I spend my time learning & experimenting new technologies.
-      </p>
-      <p id="summary" ref="summaryRef" class="opacity-0">
-        Over the last two years, I've gained expertise in modern tech stacks like React, Next, Vue, NodeJS and PostgreSQL.
-        I've worked on plenty of projects including REST APIs, Websites and CLIs.
-        I'm currently focusing on participating in developer friendly events and contributing to opensource projects & softwares.
-      </p>
+        Web Developer
+      </h3>
+      <div class="flex justify-end">
+        <a 
+          ref="downloadBtn"
+          href="https://drive.google.com/file/d/11KR6O8BxWsq8SSGccaDhdYKC_afTHVFM/view?usp=sharing"
+          download="amit-resume.pdf"
+          class="
+            text-white px-4 py-2 font-semibold text-lg rounded-lg border-2 border-white tracking-wider
+            hover:text-blue-500 focus:text-blue-500 hover:bg-white focus:bg-white
+          "
+          aria-label="download amit's resume"
+          target="_blank"
+        >
+          Resume
+        </a>
+      </div>
     </div>
   </main>
 </template>
@@ -51,13 +61,10 @@ import {
   Points,
 } from 'three';
 
-const router = useRouter();
-
 const canvas = ref()
 const containerRef = ref()
 const introRef = ref()
-const whoAmIRef = ref()
-const summaryRef = ref()
+const roleRef = ref()
 
 onMounted(() => {
   const world = {
@@ -262,20 +269,12 @@ onMounted(() => {
     ease: 'expo',
   })
 
-  gsap.to(whoAmIRef.value, {
+  gsap.to(roleRef.value, {
     opacity: 1,
     y: 0,
     duration: 1.5,
+    ease: 'expo',
     delay: 0.3,
-    ease: 'expo',
-  })
-
-  gsap.to(summaryRef.value, {
-    opacity: 1,
-    y: 0,
-    duration: 1.5,
-    delay: 0.6,
-    ease: 'expo',
   })
 
   window.addEventListener('resize', (e) => {
