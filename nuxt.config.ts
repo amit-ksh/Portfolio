@@ -30,6 +30,15 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
   ],
 
+  googleFonts: {
+    families: {
+      'Exo+2': {
+        ital: [700]
+      },
+      'Space+Mono': true
+    }
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
 
