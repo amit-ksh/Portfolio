@@ -3,7 +3,7 @@
       <h2 id="title"
         ref="titleRef"
         class="text-white font-exo text-5xl mb-6 opacity-0 uppercase"
-        style="transform: translateY(30px)"
+        style="translate: 0 30px"
       >
       Projects
       </h2>
