@@ -1,10 +1,12 @@
 <template>
   <main>
-    <Socials class="top-2 right-2" />
+    <div ref="socialsRef" class="absolute right-2" style="translate: 0 -100%;">
+      <Socials />
+    </div>
     
     <canvas ref="canvas"></canvas>
 
-    <div id="about" ref="containerRef"
+    <div
       class="absolute w-full max-w-2xl px-6"
       style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
     >
@@ -62,9 +64,9 @@ import {
 } from 'three';
 
 const canvas = ref()
-const containerRef = ref()
 const introRef = ref()
 const roleRef = ref()
+const socialsRef = ref()
 
 onMounted(() => {
   const world = {
@@ -275,6 +277,12 @@ onMounted(() => {
     duration: 1.5,
     ease: 'expo',
     delay: 0.3,
+  })
+
+  gsap.to(socialsRef.value, {
+    y: '8px',
+    ease: 'back.inOut',
+    duration: 1.5,
   })
 
   window.addEventListener('resize', (e) => {
