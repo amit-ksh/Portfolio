@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-lg py-3 px-6 z-50">
-    <h3 class="mb-2 text-lg text-[#009ffd] font-bold font-exo">Connect with me!</h3>
+    <h3 class="mb-2 text-lg text-[#009ffd] font-bold font-exo italic">Connect with me!</h3>
 
     <div class="flex justify-between align-middle gap-3">
       <a v-for="social in socials" :key="social.name" 

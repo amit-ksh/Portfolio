@@ -10,7 +10,7 @@
 
       <div>
         <h2 ref="titleRef" id="title"
-          class="text-white font-exo text-5xl mb-4 uppercase opacity-0"
+          class="text-white font-exo text-5xl mb-6 uppercase opacity-0"
           style="translate: 0 30px;"
         >
           About Me
@@ -45,22 +45,46 @@ import {
   Points,
 } from 'three';
 
-const age = `
-${new Date().getFullYear() - 2001} years old!
-`
+/**
+ * Returns the difference between the given date and current date.
+ * @param  {int} year  
+ * @param  {int} month 
+ * @param  {int} date  
+ * @return {{year: int, month: int, day: int}}
+ */
+const diffDate = (year, month, date) => {
+  const now = new Date()
+  const diff = Math.abs(now - new Date(year, month - 1, date))
+  const diffDate = new Date(diff)
+
+  let y = diffDate.getFullYear() - 1970 // date starts from 1 Jan 1970
+  const m = diffDate.getMonth()
+  const d = diffDate.getDate()
+
+  return {
+    year: y,
+    month: m,
+    date: d,
+  }
+}
+
+const daysLived = diffDate(2001, 11, 10)
+const daysLivedString = computed(() =>
+  `${daysLived.year} years, ${daysLived.month} months, ${daysLived.date} days!`
+)
 
 const data = [
   {
     attr: 'Name', value: 'Amit Kumar Sharma',
   },
   {
-    attr: 'Age', value: age,
+    attr: 'Days Lived', value: daysLivedString.value,
   },
   {
     attr: 'Location', value: 'Ranchi, Jharkhand, India',
   },
   {
-    attr: 'Summary', value: `A 21 year old student, self-motivated tech enthusiast, full-stack developer and a ML enthusiast. 
+    attr: 'Summary', value: `A ${daysLived.year} year old student, self-motivated tech enthusiast, full-stack developer and a ML enthusiast. 
                             I spend my time learning & experimenting new technologies.`,
   },
   {
