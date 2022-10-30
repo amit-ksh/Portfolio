@@ -24,14 +24,14 @@
       >
         Web Developer
       </h3>
-      <div class="flex justify-end">
+      <div class="flex justify-end mt-4">
         <a 
+          id="download-btn"
           ref="downloadBtn"
           href="https://drive.google.com/file/d/11KR6O8BxWsq8SSGccaDhdYKC_afTHVFM/view?usp=sharing"
           download="amit-resume.pdf"
           class="
             text-white px-4 py-2 font-semibold text-lg rounded-lg border-2 border-white tracking-wider
-            hover:text-blue-500 focus:text-blue-500 hover:bg-white focus:bg-white
           "
           aria-label="download amit's resume"
           target="_blank"
@@ -292,3 +292,42 @@ onMounted(() => {
   })
 })
 </script>
+
+<style scoped>
+#download-btn {
+  overflow: hidden;
+  text-decoration: none;
+  transition: 300ms transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+  
+#download-btn::after {
+  background-color: white;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0%) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: 300ms transform ease-in-out;
+  will-change: transform;
+  z-index: -1;
+}
+  
+#download-btn:hover::after {
+  transform: translate(0, 0);
+}
+  
+#download-btn:hover {
+  border: 0;
+  color: #055c8e;
+  transform: scale(1.1);
+  will-change: transform;
+}
+    
+</style>
