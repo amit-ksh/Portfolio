@@ -3,7 +3,7 @@
       <h2 id="title"
         ref="titleRef"
         class="text-white font-exo text-5xl mb-6 opacity-0 uppercase"
-        style="translate: 0 30px"
+        style="translate: 0 30px;"
       >
       Projects
       </h2>
@@ -14,45 +14,16 @@
           id="projects"
           ref="projectsRef"
           v-for="project in projects"
-          :key="project.title   "
+          :key="project.title"
           class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4"
           style="transform: translateX(-100vw)"
         >
-          <div class="c-card flex flex-col h-full bg-white shadow-md hover:shadow-xl focus:shadow-xl rounded-lg overflow-hidden">
-              <div class="relative pb-48 overflow-hidden">
-                  <img class="absolute inset-0 h-full w-full object-cover" :src="project.image.url" :alt="project.title">
-              </div>
-              <div class="p-4">
-                  <h4 class="mt-2 mb-2 font-bold">{{ project.title }}</h4>
-                  <p class="text-sm font-mono">{{ project.description }}</p>
-              </div>
-              <div class="flex flex-wrap flex-row mt-auto py-4 px-2 border-t border-b text-xs text-gray-700">
-                  <!-- GITHUB LINK -->
-                  <a
-                  v-if="project.url.github"
-                  :href="project.url.github"
-                  class="
-                    ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300
-                    focus:text-slate-500 dark:focus:text-slate-300
-                  "
-                  target="_blank"
-                  >
-                      <GithubLogo :label="project.title + ' on GitHub'" class="w-5 h-5" />
-                  </a>
-                  <!-- WEBSITE LINK -->
-                  <a
-                  v-if="project.url.website"
-                  :href="project.url.website"
-                  class="
-                    ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300
-                   focus:text-slate-500 dark:focus:text-slate-300
-                  "
-                  target="_blank"
-                  >
-                      <WebLogo :label="project.title + '\'s Website'" class="w-5 h-5" />
-                  </a>
-              </div>
-          </div>
+          <Project 
+            :title="project.title" 
+            :description="project.description" 
+            :imageUrl="project.image.url" 
+            :url="project.url" 
+          />
         </div>
       </div>
     </div>
@@ -64,9 +35,6 @@ import gsap from 'gsap'
 import iphoneImg from '~/assets/images/iphone.jpg'
 import laptopImg from '~/assets/images/laptop.jpg'
 import personImg from '~/assets/images/person.jpg'
-import GithubLogo from '~/components/Logo/Github.vue';
-import WebLogo from '~/components/Logo/Web.vue';
-
 
 const projects = [
   {
@@ -147,14 +115,3 @@ onMounted(() => {
   });
 });
 </script>
-
-<style>
-.c-card img {
-    transition: transform .3s ease-in-out;
-}
-
-img:hover {
-    transform: scale(1.05)
-}
-
-</style>
