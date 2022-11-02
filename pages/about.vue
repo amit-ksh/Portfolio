@@ -8,31 +8,12 @@
       "
       ></div>
 
-      <div>
-        <h2 ref="titleRef" id="title"
-          class="text-white font-exo text-5xl mb-6 uppercase opacity-0"
-          style="translate: 0 30px;"
-        >
-          About Me
-        </h2>
-
-        <div ref="aboutRef" class="
-          px-6 py-4 md:mx-auto ml-4 max-w-2xl text-white border-2 border-blue-700 border-solid 
-          rounded-sm opacity-0
-        "
-        >
-          <div v-for="row in data" :key="row.attr" class="text-xl font-mono mb-2">
-            <h3 class="font-bold text-xl md:text-2xl tracking-wide text-justify">{{ row.attr }}</h3>
-            <p class="text-sm md:text-lg">{{ row.value }}</p>
-          </div>
-        </div>
-      </div>
+      <AboutMe  />
     </main>
   </div>
 </template>
 
 <script setup>
-import gsap from 'gsap';
 import {
   Raycaster,
   Scene,
@@ -44,68 +25,10 @@ import {
   Float32BufferAttribute,
   Points,
 } from 'three';
+import { getTotalHeight, getTotalWidth } from '~/utils/helpers'
 
-/**
- * Returns the difference between the given date and current date.
- * @param  {int} year  
- * @param  {int} month 
- * @param  {int} date  
- * @return {{year: int, month: int, day: int}}
- */
-const diffDate = (year, month, date) => {
-  const now = new Date()
-  const diff = Math.abs(now - new Date(year, month - 1, date))
-  const diffDate = new Date(diff)
-
-  let y = diffDate.getFullYear() - 1970 // date starts from 1 Jan 1970
-  const m = diffDate.getMonth()
-  const d = diffDate.getDate()
-
-  return {
-    year: y,
-    month: m,
-    date: d,
-  }
-}
-
-const daysLived = diffDate(2001, 11, 10)
-const daysLivedString = computed(() =>
-  `${daysLived.year} years, ${daysLived.month} months, ${daysLived.date} days!`
-)
-
-const data = [
-  {
-    attr: 'Name', value: 'Amit Kumar Sharma',
-  },
-  {
-    attr: 'Days Lived', value: daysLivedString.value,
-  },
-  {
-    attr: 'Location', value: 'Ranchi, Jharkhand, India',
-  },
-  {
-    attr: 'Summary', value: `A ${daysLived.year} year old student, self-motivated tech enthusiast, full-stack developer and a ML enthusiast. 
-                            I spend my time learning & experimenting new technologies.`,
-  },
-  {
-    attr: '', value: `Over the last two years, I've gained expertise in modern tech stacks like React, Next, Vue, NodeJS and PostgreSQL.
-                            I've worked on plenty of projects including REST APIs, Websites and CLIs.
-                            I'm currently focusing on participating in developer friendly events and contributing to opensource projects & softwares.`,
-  },
-]
 
 const canvas = ref()
-const titleRef = ref()
-const aboutRef = ref()
-
-const getTotalHeight = () => {
-  return Math.max(document.body.getBoundingClientRect().height, window.innerHeight)
-}
-
-const getTotalWidth = () => {
-  return Math.max(document.body.getBoundingClientRect().width, window.innerWidth)
-}
-
 
 onMounted(() => {
   const raycaster = new Raycaster()
@@ -162,23 +85,10 @@ onMounted(() => {
 
   animate()
 
-  window.addEventListener('resize', (e) => {
+  window.addEventListener('resize', () => {
     renderer.setSize(getTotalWidth(), getTotalHeight())
     camera.aspect = getTotalWidth() / getTotalHeight()
     camera.updateProjectionMatrix()
-  })
-
-  gsap.to(titleRef.value, {
-    opacity: 1,
-    y: 0,
-    duration: 1.5,
-    ease: 'expo'
-  });
-
-  gsap.to(aboutRef.value, {
-    opacity: 1,
-    duration: 2,
-    ease: 'sine.out',
   })
 });
 </script>
