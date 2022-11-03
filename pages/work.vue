@@ -1,12 +1,8 @@
 <template>
-  <div class="bg-black px-6 py-12">
-      <h2 id="title"
-        ref="titleRef"
-        class="text-white font-exo text-5xl mb-6 opacity-0 uppercase"
-        style="translate: 0 30px;"
-      >
+  <div class="bg-black px-6 py-12 pb-20">
+    <Header>
       Projects
-      </h2>
+    </Header>
 
     <div class="container mx-auto">
       <div class="flex flex-wrap -mx-4">
@@ -98,13 +94,6 @@ const titleRef = ref(null)
 const projectsRef = ref(null)
 
 onMounted(() => {
-  gsap.to(titleRef.value, {
-    opacity: 1,
-    y: 0,
-    duration: 1.5,
-    ease: 'expo'
-  });
-
   gsap.to(projectsRef.value, {
     opacity: 1,
     x: 0,

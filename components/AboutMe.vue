@@ -1,11 +1,6 @@
 <template>
-  <div id="about">
-    <h2 ref="titleRef" id="title"
-      class="text-white font-exo text-5xl mb-6 uppercase opacity-0"
-      style="translate: 0 30px;"
-    >
-      About Me
-    </h2>
+  <section id="about">
+    <Header>About Me</Header>
 
     <div ref="aboutRef" class="
       px-6 py-4 md:mx-auto ml-4 max-w-2xl text-white border-2 border-blue-700 border-solid 
@@ -17,7 +12,7 @@
         <p class="text-sm md:text-lg">{{ row.value }}</p>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
