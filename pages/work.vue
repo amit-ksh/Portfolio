@@ -68,7 +68,7 @@ const projects = [
     image: iphoneImg,
     title: 'GnB Distribution Analyzer',
     description: 'A python package that helps to analyze the Gaussian and Binomial Distributions',
-    techStack: ['python', 'numpy', 'matplotlib'],
+    techStack: ['python', 'numpy', 'matplotlib', 'pypi'],
     url: {
       github: 'https://github.com/amit-ksh/Udacity-AI-Programming-with-Python/tree/main/mini-projects/GnB_Distribution',
       website: 'https://pypi.org/project/gnb-distributions-analyzer/'

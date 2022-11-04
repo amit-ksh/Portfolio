@@ -8,6 +8,7 @@
         <p class="text-sm font-mono">{{ description }}</p>
     </div>
     <div class="mt-auto">
+      <!-- TECH STACK -->
       <div class="px-4 py-2">
         <h3 class="font-semibold">Tech Stack</h3>
 
@@ -21,6 +22,8 @@
           />
         </div>
       </div>
+
+      <!-- LINKS -->
       <div class="flex flex-wrap flex-row py-4 px-2 border-t border-b text-xs text-gray-700">
           <!-- GITHUB LINK -->
           <a
