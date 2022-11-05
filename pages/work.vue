@@ -76,6 +76,16 @@ const projects = [
   },
   {
     image: laptopImg,
+    title: 'homie',
+    description: 'A web app which uses the ML model to predicts the price of apartments situated in USA.',
+    techStack: ['python', 'flask', 'scikit-learn', 'numpy', 'pandas'],
+    url: {
+      github: 'https://github.com/amit-ksh/homie/',
+      website: 'https://homie.amit-ksh.repl.co',
+    }
+  },
+  {
+    image: laptopImg,
     title: 'Portfolio',
     description: 'Personal site showcasing my projects and online resume.',
     techStack: ['nuxt', 'tailwindcss', 'threejs', 'gsap', 'netlify'],
