@@ -15,7 +15,7 @@
       "
       >  
           <div v-for="lang in languages" class="">
-            <img :src="lang.logo" :alt="lang.name" />
+            <img :src="`/assets/svg/${lang}.svg`" :alt="lang" />
           </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
         grid grid-cols-4 gap-6
       ">  
           <div v-for="skill in web">
-            <img :src="skill.logo" :alt="skill.name" />
+            <img :src="`/assets/svg/${skill}.svg`" :alt="skill" />
           </div>
       </div>
     </div>
@@ -48,7 +48,7 @@
         grid grid-cols-4 gap-6
         ">  
           <div v-for="skill in ml" class="">
-            <img :src="skill.logo" :alt="skill.name" />
+            <img :src="`/assets/svg/${skill}.svg`" :alt="skill" />
           </div>
       </div>
     </div>
@@ -56,45 +56,22 @@
 </template>
 
 <script setup>
-import pythonLogo from '~/assets/svg/python.svg'
-import jsLogo from '~/assets/svg/js.svg'
-import htmlLogo from '~/assets/svg/html.svg'
-import cssLogo from '~/assets/svg/css.svg'
-import reactLogo from '~/assets/svg/react.svg'
-import vueLogo from '~/assets/svg/vue.svg'
-import chakrauiLogo from '~/assets/svg/chakraui.svg'
-import tailwindcssLogo from '~/assets/svg/tailwindcss.svg'
-import nextLogo from '~/assets/svg/nextjs.svg'
-import nodeLogo from '~/assets/svg/node.svg'
-import expressLogo from '~/assets/svg/express.svg'
-import prismaLogo from '~/assets/svg/prisma.svg'
-import postgresLogo from '~/assets/svg/postgres.svg'
-import numpyLogo from '~/assets/svg/numpy.svg'
-import pandasLogo from '~/assets/svg/pandas.svg'
-import scikitLogo from '~/assets/svg/scikit-learn.svg'
 
-const languages = [
-  { name: "python", logo: pythonLogo },
-  { name: "javascript", logo: jsLogo },
-]
+const languages = ["python", "js",]
 const web = [
-  { name: "html", logo: htmlLogo },
-  { name: "css", logo: cssLogo },
-  { name: "react", logo: reactLogo },
-  { name: "vue", logo: vueLogo },
-  { name: "nextjs", logo: nextLogo },
-  { name: "chakra-ui", logo: chakrauiLogo },
-  { name: "tailwindcss", logo: tailwindcssLogo },
-  { name: "nodejs", logo: nodeLogo }, 
-  { name: "expressjs", logo: expressLogo }, 
-  { name: "prisma", logo: prismaLogo }, 
-  { name: "postgresdb", logo: postgresLogo }, 
+"html", 
+"css", 
+"react", 
+"vue", 
+"nextjs", 
+"chakraui", 
+"tailwindcss", 
+"node", 
+"express", 
+"prisma", 
+"postgres", 
 ]
-const ml = [
-  { name: "numpy", logo: numpyLogo },
-  { name: "pandas", logo: pandasLogo },
-  { name: "scikit-learn", logo: scikitLogo },
-]
+const ml = ["numpy", "pandas", "matplotlib", "scikit-learn", ]
 </script>
 
 <style scoped>
