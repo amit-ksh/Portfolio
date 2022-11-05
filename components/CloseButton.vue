@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 .outer {
   position: relative;
   width: 36px;

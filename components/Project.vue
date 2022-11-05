@@ -13,12 +13,12 @@
         <h3 class="font-semibold">Tech Stack</h3>
 
         <div class="flex gap-4 flex-wrap my-2">
-          <img 
+          <Logo
             v-for="tech in techStack" 
-            key="tech" 
-            :src="`/assets/svg/${tech}.svg`" 
-            width="30" 
-            height="30" 
+            :key="tech" 
+            :logo="tech" 
+            :name="tech"
+            class="w-8 h-8"
           />
         </div>
       </div>
@@ -29,25 +29,19 @@
           <a
           v-if="url.github"
           :href="url.github"
-          class="
-            ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300
-            focus:text-slate-500 dark:focus:text-slate-300
-          "
+          class="ml-6 block"
           target="_blank"
           >
-            <GithubLogo :label="title + ' on GitHub'" class="w-5 h-5" />
+            <Logo logo="github" :name="title + ' on GitHub'" class="w-5 h-5 cursor-pointer" />
           </a>
           <!-- WEBSITE LINK -->
           <a
           v-if="url.website"
           :href="url.website"
-          class="
-            ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300
-            focus:text-slate-500 dark:focus:text-slate-300
-          "
+          class="ml-6 block"
           target="_blank"
           >
-            <WebLogo :label="title + '\'s Website'" class="w-5 h-5" />
+            <Logo logo="web" :name="title + '\'s Website'" class="w-5 h-5 cursor-pointer" />
           </a>
       </div>
     </div>
@@ -55,9 +49,6 @@
 </template>
 
 <script setup>
-import GithubLogo from '~/components/Logo/Github.vue';
-import WebLogo from '~/components/Logo/Web.vue';
-
 defineProps({
   title: String,
   description: String,
@@ -70,13 +61,12 @@ defineProps({
 })
 </script>
 
-<style>
-.c-card img {
+<style scoped>
+img {
     transition: transform .3s ease-in-out;
 }
 
 img:hover {
     transform: scale(1.05)
 }
-
 </style>

@@ -45,17 +45,9 @@ const data = [
   },
 ]
 
-const titleRef = ref()
 const aboutRef = ref()
 
 onMounted(() => {
-  gsap.to(titleRef.value, {
-    opacity: 1,
-    y: 0,
-    duration: 1.5,
-    ease: 'expo'
-  });
-
   gsap.to(aboutRef.value, {
     opacity: 1,
     duration: 2,

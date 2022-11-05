@@ -14,9 +14,7 @@
         grid grid-cols-4 place-content-center gap-6
       "
       >  
-          <div v-for="lang in languages" class="">
-            <img :src="`/assets/svg/${lang}.svg`" :alt="lang" />
-          </div>
+          <Logo v-for="lang in languages" :key="lang" :logo="lang" :name="lang" />
       </div>
     </div>
 
@@ -28,12 +26,9 @@
       "
       >Web</h2>
       <div class="
-        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
-        grid grid-cols-4 gap-6
+        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg grid grid-cols-4 gap-6
       ">  
-          <div v-for="skill in web">
-            <img :src="`/assets/svg/${skill}.svg`" :alt="skill" />
-          </div>
+          <Logo v-for="skill in web" :key="skill" :logo="skill" :name="skill" />
       </div>
     </div>
 
@@ -44,19 +39,15 @@
         font-bold tracking-wider font-exo text-2xl text-center
       ">AI & ML</h2>
       <div class="
-        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
-        grid grid-cols-4 gap-6
+        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg grid grid-cols-4 gap-6
         ">  
-          <div v-for="skill in ml" class="">
-            <img :src="`/assets/svg/${skill}.svg`" :alt="skill" />
-          </div>
+          <Logo v-for="skill in ml" :key="skill" :logo="skill" :name="skill" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-
 const languages = ["python", "js",]
 const web = [
 "html", 
@@ -79,5 +70,9 @@ const ml = ["numpy", "pandas", "matplotlib", "scikit-learn", ]
   width: 80px;
   height: 80px;
   transition: all 500ms;
+}
+
+.skill img:hover {
+  scale: 1.05;
 }
 </style>

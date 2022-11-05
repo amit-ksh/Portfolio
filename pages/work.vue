@@ -86,7 +86,7 @@ const projects = [
   },
 ];
 
-const projectsRef = ref(null)
+const projectsRef = ref()
 
 onMounted(() => {
   gsap.to(projectsRef.value, {

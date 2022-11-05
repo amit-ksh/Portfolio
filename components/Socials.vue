@@ -8,42 +8,33 @@
         class="block cursor-pointer focus:scale-110 hover:scale-110 transition duration-200" 
         target="_blank"
       >
-        <component 
-          :is="social.Logo" 
-          :label="social.name"
-          class="w-8 h-8"
-        />
+        <Logo :logo="social.logo" :name="social.name" class="w-7 h-7" />
     </a>
-    </div>
+  </div>
   </div>
 </template>
 
 <script setup>
-import GithubLogo from '~/components/Logo/Github.vue'
-import LinkedInLogo from '~/components/Logo/LinkedIn.vue'
-import TwitterLogo from '~/components/Logo/Twitter.vue'
-import CodepenLogo from '~/components/Logo/Codepen.vue'
-
 const socials = [
   {
     name: 'LinkedIn',
     url: 'https://linkedin.com/in/amit-ksh',
-    Logo: LinkedInLogo
+    logo: 'linkedin'
   },
   {
     name: 'Github',
     url: 'https://github.com/amit-ksh',
-    Logo: GithubLogo
+    logo: 'github'
   },
   {
     name: 'Twitter',
     url: 'https://twitter.com/amit__ksh',
-    Logo: TwitterLogo
+    logo: 'twitter'
   },
   {
     name: 'CodePen.io',
     url: 'https://codepen.io/amit-ksh',
-    Logo: CodepenLogo
+    logo: 'codepen'
   },
 ]
 </script>
