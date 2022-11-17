@@ -50,7 +50,7 @@
                 hover:bg-white focus:bg-white hover:scale-105 focus:text-blue-500 text-center
                 "  
               >
-                <NuxtLink :to="route.url" class="block py-2 px-4 cursor-pointer">{{ route.name }}</NuxtLink>
+                <NuxtLink @click="closeNavbar" :to="route.url" class="block py-2 px-4 cursor-pointer">{{ route.name }}</NuxtLink>
               </li>
             </ul>
           </div>
