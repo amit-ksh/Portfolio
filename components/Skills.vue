@@ -11,7 +11,7 @@
       >Languages</h2>
       <div class="
         skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
-        grid grid-cols-4 place-content-center gap-6
+        grid grid-cols-3 md:grid-cols-4 gap-6
       "
       >  
           <Logo v-for="lang in languages" :key="lang" :logo="lang" :name="lang" />
@@ -26,7 +26,8 @@
       "
       >Web</h2>
       <div class="
-        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg grid grid-cols-4 gap-6
+        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
+        grid grid-cols-3 md:grid-cols-4 gap-6
       ">  
           <Logo v-for="skill in web" :key="skill" :logo="skill" :name="skill" />
       </div>
@@ -39,7 +40,8 @@
         font-bold tracking-wider font-exo text-2xl text-center
       ">AI & ML</h2>
       <div class="
-        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg grid grid-cols-4 gap-6
+        skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
+        grid grid-cols-3 md:grid-cols-4 gap-6
         ">  
           <Logo v-for="skill in ml" :key="skill" :logo="skill" :name="skill" />
       </div>

@@ -1,5 +1,5 @@
 <template>
-  <img :src="`/svg/${logo}.svg`" :alt="name" />
+  <img :src="`/svg/${logo}.svg`" :alt="name" class="m-auto" />
 </template>
 
 <script setup>
