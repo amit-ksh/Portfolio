@@ -1,5 +1,13 @@
 <template>
-  <div class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] z-50" style="translate: -50%">
+  <div 
+    ref="bgRef" 
+    class="
+    z-50 absolute w-full top-0 left-0 translate-x-[-100%]
+    -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] blur
+    "
+    ></div>
+
+  <nav class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] z-50" style="translate: -50%">
     <div class="max-w-7xl mx-auto">
       <div 
         ref="openBtn" 
@@ -43,25 +51,30 @@
             </div>
             <ul class="flex flex-col md:flex-row align-middle justify-center gap-4 font-semibold">
               <li 
-                v-for="route in routes" 
-                :key="route.name"
-                class="
-                text-white text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500
+                v-for="r in routes" 
+                :key="r.name"
+                :class="
+                `text-white text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500
                 hover:bg-white focus:bg-white hover:scale-105 focus:text-blue-500 text-center
-                "  
+                ${route.path === r.url && 'text-blue-500 bg-white'}`
+                "
               >
-                <NuxtLink @click="closeNavbar" :to="route.url" class="block py-2 px-4 cursor-pointer">{{ route.name }}</NuxtLink>
+                <NuxtLink @click="(e) => goto(e, r.url)" class="block py-2 px-4 cursor-pointer">{{ r.name }}</NuxtLink>
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script setup>
 import gsap from 'gsap';
+import { getTotalHeight } from '~~/utils/helpers';
+
+const router = useRouter()
+const route = useRoute()
 
 const routes = [
   {
@@ -82,6 +95,7 @@ const isNavOpen = ref(false);
 const openBtn = ref()
 const closeBtn = ref()
 const navbarRef = ref()
+const bgRef = ref()
 
 function openNavbar() {
   if (isNavOpen.value) return;
@@ -119,4 +133,27 @@ function closeNavbar() {
 
   isNavOpen.value = false
 }
+
+function goto(e, url) {
+  e.preventDefault();
+
+  if (route.path !== url) {
+    gsap.to(bgRef.value, {
+      x: 0,
+      duration: 1,
+    });
+    gsap.to(bgRef.value, {
+      delay: 2,
+      x: '-100%',
+      onComplete: () => {
+        router.push({ path: url });
+      },
+    });
+  }
+  closeNavbar();
+}
+
+onMounted(() => {
+  bgRef.value.style.height = getTotalHeight() + 'px';
+})
 </script>

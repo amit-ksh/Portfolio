@@ -35,7 +35,7 @@ const data = [
     attr: 'Location', value: 'Ranchi, Jharkhand, India',
   },
   {
-    attr: 'Summary', value: `A ${daysLived.year} year old student, self-motivated tech enthusiast, full-stack developer and a ML enthusiast. 
+    attr: 'Summary', value: `A ${daysLived.year} year young, self-motivated tech enthusiast, full-stack developer and a ML enthusiast. 
                             I spend my time learning & experimenting new technologies.`,
   },
   {

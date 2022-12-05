@@ -28,7 +28,7 @@
         <a 
           id="download-btn"
           ref="downloadBtn"
-          href="https://drive.google.com/file/d/11KR6O8BxWsq8SSGccaDhdYKC_afTHVFM/view?usp=sharing"
+          href="https://drive.google.com/file/d/1J-aLetwdiJEEopSv2rVqddBlsvP2FhQa/view?usp=share_link"
           download="amit-resume.pdf"
           class="
             text-white px-4 py-2 font-semibold text-lg rounded-lg border-2 border-white tracking-wider

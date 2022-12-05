@@ -2,7 +2,7 @@
   <div>
     <canvas class="absolute z-[-1]" ref="canvas"></canvas>
 
-    <main class="relative h-full px-6 py-12 pb-20">
+    <main class="relative h-full px-6 pt-12 pb-20">
       <div class="
         absolute min-h-[100vh] -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] opacity-50 z-[-1]
       "

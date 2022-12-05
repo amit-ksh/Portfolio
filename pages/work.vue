@@ -45,6 +45,16 @@ const projects = [
     }
   },
   {
+    image: personImg,
+    title: 'Flower Classifier',
+    description:
+      "A CLI application that trains the pretrained Neural Netwrok and uses that for predicting the flower's name",
+    techStack: ['python', 'pytorch', 'numpy'],
+    url: {
+      github: 'https://github.com/amit-ksh/Flower-Classifier',
+    },
+  },
+  {
     image: laptopImg,
     title: 'Weather App',
     description: 'Weather App is a React web app which display the weather details from all around the world.',
@@ -61,7 +71,7 @@ const projects = [
     techStack: ['html', 'css', 'js', 'node', 'postgres', 'heroku'],
     url: {
       github: 'https://github.com/amit-ksh/todo-app',
-      website: 'https://h-todo-app.herokuapp.com/',
+      // website: 'https://h-todo-app.herokuapp.com/',
     }
   },
   {

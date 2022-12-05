@@ -64,7 +64,7 @@ const web = [
 "prisma", 
 "postgres", 
 ]
-const ml = ["numpy", "pandas", "matplotlib", "scikit-learn", ]
+const ml = ["numpy", "pandas", "matplotlib", "scikit-learn", "pytorch"]
 </script>
 
 <style scoped>
