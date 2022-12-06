@@ -7,8 +7,8 @@
       rounded-sm opacity-0
     "
     >
-      <div v-for="row in data" :key="row.attr" class="text-xl font-mono mb-2">
-        <h3 class="font-bold text-xl md:text-2xl tracking-wide text-justify">{{ row.attr }}</h3>
+      <div v-for="row in aboutme" :key="row.attr" class="text-xl font-mono mb-2">
+        <h3 class="font-bold text-xl md:text-2xl tracking-wide text-justify">{{ row.name }}</h3>
         <p class="text-sm md:text-lg">{{ row.value }}</p>
       </div>
     </div>
@@ -18,33 +18,57 @@
 <script setup>
 import gsap from 'gsap';
 import { diffDate } from '~/utils/helpers';
+import { gql } from 'graphql-request';
 
-const daysLived = diffDate(2001, 11, 10)
-const daysLivedString = computed(() =>
-  `${daysLived.year} years, ${daysLived.month} months, ${daysLived.date} days!`
-)
+  const {data} = await useAsyncData(
+    `author`,
+    async function ({ $hygraph }) {
+      const { authors } = await $hygraph.request(
+        gql`
+          {
+            authors {
+              name
+              intro
+              bio
+              dob
+              location 
+            }
+          }
+        `
+      );
 
-const data = [
-  {
-    attr: 'Name', value: 'Amit Kumar Sharma',
-  },
-  {
-    attr: 'Days Lived', value: daysLivedString.value,
-  },
-  {
-    attr: 'Location', value: 'Ranchi, Jharkhand, India',
-  },
-  {
-    attr: 'Summary', value: `A ${daysLived.year} year young, self-motivated tech enthusiast, full-stack developer and a ML enthusiast. 
-                            I spend my time learning & experimenting new technologies.`,
-  },
-  {
-    attr: '', value: `Over the last two years, I've gained expertise in modern tech stacks like React, Next, Vue, NodeJS and PostgreSQL.
-                      I've worked on plenty of projects including REST APIs, Websites and CLIs.
-                      I'm currently focusing on participating in developer friendly events and contributing to opensource projects & softwares.`,
-  },
-]
+      return authors[0];
+    }
+  );
+  
+  const dob = data.value.dob.split('-').map(n => +n) // yyyy-mm-dd
+  const totalDays = diffDate(...dob)
+  const daysLivedString = computed(() =>
+  `${totalDays.year} years, ${totalDays.month} months, ${totalDays.date} days!`
+  )
+  const daysLived = {
+    name: 'Days Lived',
+    value: daysLivedString.value
+  }
 
+  const name = {
+    name: 'Name',
+    value: data.value.name
+  }
+  const location = {
+    name: 'Location',
+    value: data.value.location
+  }
+  const summary = {
+    name: 'Summary',
+    value: data.value.intro.replace('#daysLived', totalDays.year)
+  }
+  const bio = {
+    name: '',
+    value: data.value.bio
+  }
+  
+const aboutme = [name, daysLived, location, summary, bio]
 const aboutRef = ref()
 
 onMounted(() => {

@@ -134,7 +134,8 @@ onMounted(() => {
   renderer.setSize(innerWidth, innerHeight)
   renderer.setPixelRatio(devicePixelRatio)
 
-  new OrbitControls(camera, renderer.domElement)
+  const controls = new OrbitControls(camera, renderer.domElement)
+  controls.enableZoom = false
   camera.position.z = 50
 
   const planeGeometry = new PlaneGeometry(
