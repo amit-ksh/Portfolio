@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" stroke="gray">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" stroke="gray">
   <g stroke-width="2" fill="#FFF">
     <circle cx="90" cy="90" r="88" />
     <circle cx="90" cy="90" r="66" />

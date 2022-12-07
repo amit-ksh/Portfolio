@@ -29,7 +29,7 @@
         skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
         grid grid-cols-3 md:grid-cols-4 gap-6
       ">  
-          <Logo v-for="skill in web" :key="skill" :logo="skill" :name="skill" />
+          <Logo v-for="skill in web" :key="skill" :logo="skill" :name="skill" class="w-20 h-20" />
       </div>
     </div>
 
