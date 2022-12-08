@@ -14,7 +14,7 @@
         grid grid-cols-3 md:grid-cols-4 gap-6
       "
       >  
-          <Logo v-for="lang in languages" :key="lang" :logo="lang" :name="lang" />
+          <Logo v-for="lang in languages" :key="lang" :logo="lang" :name="logoToName(lang)" />
       </div>
     </div>
 
@@ -29,7 +29,7 @@
         skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
         grid grid-cols-3 md:grid-cols-4 gap-6
       ">  
-          <Logo v-for="skill in web" :key="skill" :logo="skill" :name="skill" class="w-20 h-20" />
+          <Logo v-for="skill in web" :key="skill" :logo="skill" :name="logoToName(skill)" class="w-20 h-20" />
       </div>
     </div>
 
@@ -43,28 +43,15 @@
         skill ml-4 md:mx-auto max-w-2xl p-6 bg-white rounded-lg 
         grid grid-cols-3 md:grid-cols-4 gap-6
         ">  
-          <Logo v-for="skill in ml" :key="skill" :logo="skill" :name="skill" />
+          <Logo v-for="skill in ml" :key="skill" :logo="skill" :name="logoToName(skill)" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const languages = ["python", "js",]
-const web = [
-"html", 
-"css", 
-"react", 
-"vue", 
-"nextjs", 
-"chakraui", 
-"tailwindcss", 
-"node", 
-"express", 
-"prisma", 
-"postgres", 
-]
-const ml = ["numpy", "pandas", "matplotlib", "scikit-learn", "pytorch"]
+import {languages, web, ml} from '~/store/skills'
+import { logoToName } from '~/utils/helpers';
 </script>
 
 <style scoped>

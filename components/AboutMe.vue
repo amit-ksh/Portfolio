@@ -17,58 +17,8 @@
 
 <script setup>
 import gsap from 'gsap';
-import { diffDate } from '~/utils/helpers';
-import { gql } from 'graphql-request';
+import { aboutme } from '~/store/about'
 
-  const {data} = await useAsyncData(
-    `author`,
-    async function ({ $hygraph }) {
-      const { authors } = await $hygraph.request(
-        gql`
-          {
-            authors {
-              name
-              intro
-              bio
-              dob
-              location 
-            }
-          }
-        `
-      );
-
-      return authors[0];
-    }
-  );
-  
-  const dob = data.value.dob.split('-').map(n => +n) // yyyy-mm-dd
-  const totalDays = diffDate(...dob)
-  const daysLivedString = computed(() =>
-  `${totalDays.year} years, ${totalDays.month} months, ${totalDays.date} days!`
-  )
-  const daysLived = {
-    name: 'Days Lived',
-    value: daysLivedString.value
-  }
-
-  const name = {
-    name: 'Name',
-    value: data.value.name
-  }
-  const location = {
-    name: 'Location',
-    value: data.value.location
-  }
-  const summary = {
-    name: 'Summary',
-    value: data.value.intro.replace('#daysLived', totalDays.year)
-  }
-  const bio = {
-    name: '',
-    value: data.value.bio
-  }
-  
-const aboutme = [name, daysLived, location, summary, bio]
 const aboutRef = ref()
 
 onMounted(() => {

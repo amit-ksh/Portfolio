@@ -17,7 +17,7 @@
             v-for="tech in techStack" 
             :key="tech" 
             :logo="tech" 
-            :name="tech"
+            :name="logoToName(tech)"
             class="w-8 h-8"
           />
         </div>
@@ -32,7 +32,7 @@
           class="ml-6 block"
           target="_blank"
           >
-            <Logo logo="github" :name="title + ' on GitHub'" class="w-5 h-5 cursor-pointer" />
+            <Logo logo="github" :name="title + ' on GitHub'" :show-tooltip="false" class="w-5 h-5 cursor-pointer" />
           </a>
           <!-- WEBSITE LINK -->
           <a
@@ -41,7 +41,7 @@
           class="ml-6 block"
           target="_blank"
           >
-            <Logo logo="web" :name="title + '\'s Website'" class="w-5 h-5 cursor-pointer" />
+            <Logo logo="web" :name="title + '\'s Website'" :show-tooltip="false" class="w-5 h-5 cursor-pointer" />
           </a>
       </div>
     </div>
@@ -49,6 +49,8 @@
 </template>
 
 <script setup>
+import { logoToName } from '~~/utils/helpers';
+
 defineProps({
   title: String,
   description: String,

@@ -16,8 +16,6 @@
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.0.0-0",
     "dat.gui": "^0.7.9",
-    "graphql": "^16.6.0",
-    "graphql-request": "^5.0.0",
     "gsap": "^3.11.3",
     "three": "^0.145.0"
   }

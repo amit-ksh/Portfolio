@@ -1,3 +1,5 @@
+import { logoToNameMap } from "~/store/skills"
+
 /**
  * Returns the difference between the given date and current date.
  * @param  {int} year  
@@ -38,3 +40,10 @@ export const getTotalHeight = (): number => {
 export const getTotalWidth = (): number => {
   return Math.max(document.body.getBoundingClientRect().width, window.innerWidth)
 }
+
+/**
+ * Returns the difference between the given date and current date.
+ * @param  {int} logo
+ * @return name: string
+ */
+export const logoToName = (logo) => logoToNameMap[logo] || ''
