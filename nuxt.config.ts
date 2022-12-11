@@ -31,17 +31,15 @@ export default defineNuxtConfig({
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/google-fonts',
-  ],
+  buildModules: ['@nuxtjs/google-fonts'],
 
   googleFonts: {
     families: {
       'Exo+2': {
-        ital: [700]
+        ital: [700],
       },
-      'Space+Mono': true
-    }
+      'Space+Mono': true,
+    },
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -50,11 +48,11 @@ export default defineNuxtConfig({
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
-      postcssOptions: require('./postcss.config')
+      postcssOptions: require('./postcss.config'),
     },
   },
 
   publicRuntimeConfig: {
-    NODE_ENV: process.env.NODE_ENV
-  }
+    NODE_ENV: process.env.NODE_ENV,
+  },
 })

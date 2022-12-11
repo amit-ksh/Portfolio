@@ -18,34 +18,35 @@
   text-align: center;
 }
 
-label { 
-  font-size: .8em; 
+label {
+  font-size: 0.8em;
   line-height: 2.5em;
   text-transform: uppercase;
   color: #fff;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
   opacity: 0;
   cursor: pointer;
 }
 
-.inner:before, .inner:after {
+.inner:before,
+.inner:after {
   position: absolute;
-  content: '';
+  content: "";
   height: 2px;
   width: inherit;
   background: white;
   left: 0;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 .inner:before {
-  top: 50%; 
-  transform: rotate(45deg);  
+  top: 50%;
+  transform: rotate(45deg);
 }
 
-.inner:after {  
+.inner:after {
   bottom: 50%;
-  transform: rotate(-45deg);  
+  transform: rotate(-45deg);
 }
 
 .outer:hover label {

@@ -7,16 +7,14 @@
   </div>
 </template>
 
-
 <script lang="ts" setup>
-import '@/assets/css/main.css'
-
+import "@/assets/css/main.css";
 </script>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -34,10 +32,10 @@ html {
 }
 
 .font-exo {
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 
 .font-space-mono {
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
 }
 </style>
