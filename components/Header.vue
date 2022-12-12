@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import gsap from "gsap"
+import gsap from 'gsap'
 
 const titleRef = ref(null)
 
@@ -18,7 +18,7 @@ onMounted(() => {
     opacity: 1,
     y: 0,
     duration: 1.5,
-    ease: "expo",
+    ease: 'expo',
   })
 })
 </script>

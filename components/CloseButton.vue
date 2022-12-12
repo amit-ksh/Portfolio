@@ -31,7 +31,7 @@ label {
 .inner:before,
 .inner:after {
   position: absolute;
-  content: "";
+  content: '';
   height: 2px;
   width: inherit;
   background: white;

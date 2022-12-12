@@ -83,89 +83,89 @@
 </template>
 
 <script setup>
-import gsap from "gsap";
-import { getTotalHeight } from "~~/utils/helpers";
+import gsap from 'gsap'
+import { getTotalHeight } from '~~/utils/helpers'
 
-const router = useRouter();
-const route = useRoute();
+const router = useRouter()
+const route = useRoute()
 
 const routes = [
   {
-    name: "About Me",
-    url: "/about",
+    name: 'About Me',
+    url: '/about',
   },
   {
-    name: "My Work",
-    url: "/work",
+    name: 'My Work',
+    url: '/work',
   },
   {
-    name: "Home",
-    url: "/",
+    name: 'Home',
+    url: '/',
   },
-];
-const isNavOpen = ref(false);
+]
+const isNavOpen = ref(false)
 
-const openBtn = ref();
-const closeBtn = ref();
-const navbarRef = ref();
-const bgRef = ref();
+const openBtn = ref()
+const closeBtn = ref()
+const navbarRef = ref()
+const bgRef = ref()
 
 function openNavbar() {
-  if (isNavOpen.value) return;
+  if (isNavOpen.value) return
 
   gsap.to(openBtn.value, {
     y: 100,
-    ease: "ease.in",
+    ease: 'ease.in',
     duration: 0.5,
-  });
+  })
 
   gsap.to(navbarRef.value, {
     y: 0,
     duration: 0.8,
     delay: 0.3,
-  });
+  })
 
-  isNavOpen.value = true;
+  isNavOpen.value = true
 }
 
 function closeNavbar() {
-  if (!isNavOpen.value) return;
+  if (!isNavOpen.value) return
 
   gsap.to(navbarRef.value, {
-    y: "50vh",
-    ease: "ease.in",
+    y: '50vh',
+    ease: 'ease.in',
     duration: 1,
-  });
+  })
 
   gsap.to(openBtn.value, {
     y: 0,
     duration: 0.8,
     delay: 0.3,
-  });
+  })
 
-  isNavOpen.value = false;
+  isNavOpen.value = false
 }
 
 function goto(e, url) {
-  e.preventDefault();
+  e.preventDefault()
 
   if (route.path !== url) {
     gsap.to(bgRef.value, {
       x: 0,
       duration: 1,
-    });
+    })
     gsap.to(bgRef.value, {
       delay: 2,
-      x: "-100%",
+      x: '-100%',
       onComplete: () => {
-        router.push({ path: url });
+        router.push({ path: url })
       },
-    });
+    })
   }
-  closeNavbar();
+  closeNavbar()
 }
 
 onMounted(() => {
-  bgRef.value.style.height = getTotalHeight() + "px";
-});
+  bgRef.value.style.height = getTotalHeight() + 'px'
+})
 </script>

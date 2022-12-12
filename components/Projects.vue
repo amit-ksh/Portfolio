@@ -22,8 +22,8 @@
 </template>
 
 <script setup>
-import gsap from "gsap"
-import { projects } from "~/store/projects"
+import gsap from 'gsap'
+import { projects } from '~/store/projects'
 
 const projectRef = ref()
 
@@ -33,7 +33,7 @@ onMounted(() => {
     x: 0,
     duration: 2,
     stagger: 0.1,
-    ease: "expo",
+    ease: 'expo',
     delay: 0.3,
   })
 })

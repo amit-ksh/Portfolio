@@ -63,8 +63,8 @@
 </template>
 
 <script setup>
-import { languages, web, ml } from "~/store/skills";
-import { logoToName } from "~/utils/helpers";
+import { languages, web, ml } from '~/store/skills'
+import { logoToName } from '~/utils/helpers'
 </script>
 
 <style scoped>

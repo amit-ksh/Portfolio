@@ -24,70 +24,70 @@ import {
   PointsMaterial,
   Float32BufferAttribute,
   Points,
-} from "three";
-import { getTotalHeight, getTotalWidth } from "~/utils/helpers";
+} from 'three'
+import { getTotalHeight, getTotalWidth } from '~/utils/helpers'
 
-const canvas = ref();
+const canvas = ref()
 
 onMounted(() => {
-  const raycaster = new Raycaster();
-  const scene = new Scene();
+  const raycaster = new Raycaster()
+  const scene = new Scene()
   const camera = new PerspectiveCamera(
     75,
     getTotalWidth() / getTotalHeight(),
     0.1,
     1000
-  );
+  )
 
   const renderer = new WebGLRenderer({
     canvas: canvas.value,
-  });
-  renderer.setSize(getTotalWidth(), getTotalHeight());
-  renderer.setPixelRatio(devicePixelRatio);
+  })
+  renderer.setSize(getTotalWidth(), getTotalHeight())
+  renderer.setPixelRatio(devicePixelRatio)
 
-  camera.position.z = 50;
+  camera.position.z = 50
 
-  const light = new DirectionalLight(0xffffff, 1);
-  light.position.set(0, -1, 1);
-  scene.add(light);
+  const light = new DirectionalLight(0xffffff, 1)
+  light.position.set(0, -1, 1)
+  scene.add(light)
 
-  const starGeometry = new BufferGeometry();
+  const starGeometry = new BufferGeometry()
   const starMaterial = new PointsMaterial({
     color: 0xffffff,
-  });
-  const starVertices = [];
+  })
+  const starVertices = []
   for (let i = 0; i < 10000; i++) {
-    const x = (Math.random() - 0.5) * 2000;
-    const y = (Math.random() - 0.5) * 2000;
-    const z = (Math.random() - 0.5) * 2000;
-    starVertices.push(x, y, z);
+    const x = (Math.random() - 0.5) * 2000
+    const y = (Math.random() - 0.5) * 2000
+    const z = (Math.random() - 0.5) * 2000
+    starVertices.push(x, y, z)
   }
   starGeometry.setAttribute(
-    "position",
+    'position',
     new Float32BufferAttribute(starVertices, 3)
-  );
-  const stars = new Points(starGeometry, starMaterial);
-  scene.add(stars);
+  )
+  const stars = new Points(starGeometry, starMaterial)
+  scene.add(stars)
 
   const mouse = {
     x: undefined,
     y: undefined,
-  };
-
-  function animate() {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
-    raycaster.setFromCamera(mouse, camera);
-
-    stars.rotation.x += 0.0001;
   }
 
-  animate();
+  function animate() {
+    requestAnimationFrame(animate)
+    renderer.render(scene, camera)
+    raycaster.setFromCamera(mouse, camera)
 
-  window.addEventListener("resize", () => {
-    renderer.setSize(getTotalWidth(), getTotalHeight());
-    camera.aspect = getTotalWidth() / getTotalHeight();
-    camera.updateProjectionMatrix();
-  });
-});
+    stars.rotation.x += 0.0001
+  }
+
+  animate()
+
+  window.addEventListener('resize', () => {
+    renderer.setSize(getTotalWidth(), getTotalHeight())
+    camera.aspect = getTotalWidth() / getTotalHeight()
+    camera.updateProjectionMatrix()
+  })
+})
 </script>

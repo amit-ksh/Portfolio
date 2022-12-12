@@ -67,7 +67,7 @@
 </template>
 
 <script setup>
-import { logoToName } from "~/utils/helpers";
+import { logoToName } from '~/utils/helpers'
 
 defineProps({
   title: {
@@ -99,7 +99,7 @@ defineProps({
     },
     required: true,
   },
-});
+})
 </script>
 
 <style scoped>

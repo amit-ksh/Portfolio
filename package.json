@@ -9,7 +9,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
     "lintfix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
-    "format": "prettier --write \"**/*.{vue,js,jsx,md}\""
+    "format": "prettier --write \"**/*.{vue,js,ts,md}\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.6.0",

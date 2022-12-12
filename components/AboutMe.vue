@@ -21,8 +21,8 @@
 </template>
 
 <script setup>
-import gsap from "gsap"
-import { aboutme } from "~/store/about"
+import gsap from 'gsap'
+import { aboutme } from '~/store/about'
 
 const aboutRef = ref()
 
@@ -30,7 +30,7 @@ onMounted(() => {
   gsap.to(aboutRef.value, {
     opacity: 1,
     duration: 2,
-    ease: "sine.out",
+    ease: 'sine.out',
   })
 })
 </script>
