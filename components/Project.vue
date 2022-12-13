@@ -83,20 +83,11 @@ defineProps({
     required: true,
   },
   techStack: {
-    type: String,
+    type: Array,
     required: true,
   },
   url: {
-    type: {
-      github: {
-        type: String,
-        required: true,
-      },
-      website: {
-        type: String,
-        required: true,
-      },
-    },
+    type: Object,
     required: true,
   },
 })

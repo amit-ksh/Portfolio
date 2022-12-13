@@ -8,6 +8,7 @@
       ></div>
 
       <AboutMe />
+      <Education />
       <Skills />
     </main>
   </div>

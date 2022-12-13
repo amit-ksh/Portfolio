@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-20">
+  <section class="mt-10">
     <Header>Skills</Header>
 
     <!-- LANGUAGES -->

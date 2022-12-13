@@ -5,7 +5,7 @@
   ></div>
 
   <nav
-    class="fixed bottom-2 left-[50%] max-h-12 w-[80vw] md:w-[400px] z-50"
+    class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] z-50"
     style="translate: -50%"
   >
     <div class="max-w-7xl mx-auto">
@@ -71,8 +71,9 @@
                 <NuxtLink
                   class="block py-2 px-4 cursor-pointer"
                   @click="(e) => goto(e, r.url)"
-                  >{{ r.name }}</NuxtLink
                 >
+                  {{ r.name }}
+                </NuxtLink>
               </li>
             </ul>
           </div>
