@@ -8,7 +8,7 @@
     />
     <div
       v-if="showTooltip"
-      class="absolute top-[-40px] flex flex-col items-center hidden mb-6 group-hover:flex"
+      class="absolute w-max top-[-40px] flex flex-col items-center hidden mb-6 group-hover:flex"
     >
       <span
         class="relative z-10 px-4 py-2 text-sm leading-none text-gray self-center whitespace-no-wrap bg-white shadow-lg rounded-sm font-mono font-semibold"

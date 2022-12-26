@@ -1,8 +1,5 @@
 <template>
-  <div
-    ref="bgRef"
-    class="z-50 absolute w-full top-0 left-0 translate-x-[-100%] -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] blur"
-  ></div>
+  <Canvas ref="canvas" />
 
   <nav
     class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] z-50"
@@ -85,9 +82,7 @@
 
 <script setup>
 import gsap from 'gsap'
-import { getTotalHeight } from '~~/utils/helpers'
 
-const router = useRouter()
 const route = useRoute()
 
 const routes = [
@@ -109,7 +104,7 @@ const isNavOpen = ref(false)
 const openBtn = ref()
 const closeBtn = ref()
 const navbarRef = ref()
-const bgRef = ref()
+const canvas = ref()
 
 function openNavbar() {
   if (isNavOpen.value) return
@@ -147,26 +142,16 @@ function closeNavbar() {
   isNavOpen.value = false
 }
 
+/**
+ * Change the route
+ * @param {Event} e
+ * @param {string} url
+ */
 function goto(e, url) {
   e.preventDefault()
-
   if (route.path !== url) {
-    gsap.to(bgRef.value, {
-      x: 0,
-      duration: 1,
-    })
-    gsap.to(bgRef.value, {
-      delay: 2,
-      x: '-100%',
-      onComplete: () => {
-        router.push({ path: url })
-      },
-    })
+    canvas.value.travel(url)
   }
   closeNavbar()
 }
-
-onMounted(() => {
-  bgRef.value.style.height = getTotalHeight() + 'px'
-})
 </script>

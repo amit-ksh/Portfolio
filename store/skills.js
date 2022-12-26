@@ -28,6 +28,7 @@ export const logoToNameMap = {
   vue: 'Vue',
   nextjs: 'Next.JS',
   nuxt: 'Nuxt.JS',
+  threejs: 'three.js',
   chakraui: 'ChakraUI',
   tailwindcss: 'TailwindCSS',
   node: 'Node.js',

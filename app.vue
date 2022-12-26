@@ -1,10 +1,10 @@
 <template>
-  <div>
-    <Navbar />
-    <NuxtLayout>
+  <Navbar />
+  <NuxtLayout>
+    <div id="app">
       <NuxtPage />
-    </NuxtLayout>
-  </div>
+    </div>
+  </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
