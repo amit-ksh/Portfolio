@@ -1,5 +1,5 @@
 <template>
-  <div class="outer font-mono">
+  <div role="button" class="outer font-mono">
     <div class="inner">
       <label>Close</label>
     </div>

@@ -2,22 +2,19 @@
   <Canvas ref="canvas" />
 
   <nav
-    class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] z-50"
-    style="translate: -50%"
+    class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] translate-x-[-50%] z-50"
   >
     <div class="max-w-7xl mx-auto">
-      <div
-        ref="openBtn"
-        class="absolute left-[50%] bottom-0"
-        style="translate: -50%"
-        @click="openNavbar"
-      >
+      <div class="absolute left-[50%] bottom-0 translate-x-[-50%]">
         <button
+          ref="openBtn"
+          tabindex="0"
           data-collapse-toggle="navbar-default"
           type="button"
           class="inline-flex items-center p-3 text-sm rounded-lg bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 md:hidden"
           aria-controls="navbar-default"
           aria-expanded="false"
+          @click="openNavbar"
         >
           <span class="sr-only">Open menu</span>
           <svg
@@ -45,14 +42,17 @@
           class="absolute -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
         ></div>
         <div
-          class="bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative rounded-lg leading-none flex items-top justify-center align-middle space-x-6 py-4 px-6"
+          class="bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative rounded-lg leading-none flex items-center justify-center space-x-6 py-5 px-6"
         >
-          <div class="w-[100%] flex flex-col">
-            <div class="flex justify-end mb-4 md:hidden">
+          <div class="w-full flex flex-col">
+            <div class="flex justify-end">
               <CloseButton
                 ref="closeBtn"
-                class="md:hidden"
+                class="md:hidden mb-4"
+                role="button"
+                tabindex="0"
                 @click="closeNavbar"
+                @keydown.enter="closeNavbar"
               />
             </div>
             <ul
@@ -66,8 +66,10 @@
                 ${route.path === r.url && 'text-blue-500 bg-white'}`"
               >
                 <NuxtLink
+                  tabindex="0"
                   class="block py-2 px-4 cursor-pointer"
                   @click="(e) => goto(e, r.url)"
+                  @keydown.enter="(e) => goto(e, r.url)"
                 >
                   {{ r.name }}
                 </NuxtLink>
@@ -148,10 +150,18 @@ function closeNavbar() {
  * @param {string} url
  */
 function goto(e, url) {
+  if (route.path === url) return
   e.preventDefault()
-  if (route.path !== url) {
-    canvas.value.travel(url)
-  }
+  canvas.value.travel(url)
   closeNavbar()
 }
 </script>
+
+<style scoped>
+@media (min-width: theme('screens.md')) {
+  /* Makes the navbar visible */
+  #navbar-default {
+    transform: translate(0px, 0px) !important;
+  }
+}
+</style>
