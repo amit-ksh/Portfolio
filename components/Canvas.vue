@@ -77,12 +77,16 @@ const travel = (url) => {
     duration: 2,
     delay: 0.5,
     onComplete: () => {
+      router.push({ path: url })
+    },
+  })
+  gsap.to(camera.position, {
+    delay: 2.502,
+    onComplete: () => {
       // Reset the original position
       camera.rotation.set(0, 0, 0)
       camera.position.set(0, 0, 57)
       app.style.opacity = 1
-
-      router.push({ path: url })
     },
   })
 }
