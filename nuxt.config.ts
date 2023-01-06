@@ -1,7 +1,7 @@
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/v3
 
 export default defineNuxtConfig({
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // Global page headers
   app: {
     head: {
       title: 'Amit Kumar Sharma',
@@ -20,16 +20,16 @@ export default defineNuxtConfig({
     pageTransition: false,
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
+  // Global CSS
   css: ['@/assets/css/main.css'],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  // Plugins to run before rendering page
   plugins: [],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
+  // Auto import components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  // Modules for dev and build (recommended)
   buildModules: ['@nuxtjs/google-fonts'],
 
   googleFonts: {
@@ -41,10 +41,10 @@ export default defineNuxtConfig({
     },
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  // Modules
   modules: [],
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // Build Configuration
   build: {
     postcss: {
       postcssOptions: require('./postcss.config'),

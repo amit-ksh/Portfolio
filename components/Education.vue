@@ -12,7 +12,7 @@
 const education = [
   {
     time: '15 Septmber 2022',
-    title: 'Bachelor of Science in Computer Application and Cyber Security',
+    title: 'B.Sc. in Computer Application and Cyber Security',
     place: '🏫 Jharkhand Raksha Shakti University, Ranchi',
   },
   {

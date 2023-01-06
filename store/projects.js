@@ -43,17 +43,6 @@ export const projects = [
     },
   },
   {
-    image: personImg,
-    title: 'Todo App',
-    description:
-      'A todo app is a simple web application where user can create todo list and add task/todo to the list. User can mark an added task as completed and also able to delete the todo list and task.',
-    techStack: ['html', 'css', 'js', 'node', 'postgres'],
-    url: {
-      github: 'https://github.com/amit-ksh/todo-app',
-      // website: 'https://h-todo-app.herokuapp.com/',
-    },
-  },
-  {
     image: iphoneImg,
     title: 'GnB Distribution Analyzer',
     description:
