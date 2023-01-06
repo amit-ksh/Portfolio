@@ -1,8 +1,8 @@
 <template>
-  <div class="container mx-auto">
-    <Header> Projects </Header>
+  <div id="projects">
+    <Header>Projects</Header>
 
-    <div class="flex flex-wrap -mx-4">
+    <div class="flex flex-wrap mx-4">
       <div
         v-for="project in projects"
         id="project"
