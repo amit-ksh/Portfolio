@@ -2,13 +2,13 @@
   <div id="projects">
     <Header>Projects</Header>
 
-    <div class="flex flex-wrap mx-4">
+    <div class="flex flex-wrap sm:mx-4 ml-2">
       <div
         v-for="project in projects"
         id="project"
         ref="projectRef"
         :key="project.title"
-        class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 p-4"
+        class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 sm:p-4 py-4"
         style="transform: translateX(-100vw)"
       >
         <Project

@@ -29,7 +29,7 @@
           ref="downloadBtn"
           href="https://drive.google.com/file/d/1J-aLetwdiJEEopSv2rVqddBlsvP2FhQa/view?usp=share_link"
           download="amit-resume.pdf"
-          class="text-white px-4 py-2 font-semibold text-lg rounded-lg border-2 border-white tracking-wider"
+          class="py-3 px-8 uppercase font-bold text-center relative"
           aria-label="download amit's resume"
           target="_blank"
         >
@@ -73,38 +73,34 @@ onMounted(() => {
 
 <style scoped>
 #download-btn {
-  overflow: hidden;
-  text-decoration: none;
-  transition: 300ms transform ease-in-out;
-  will-change: transform;
-  z-index: 0;
+  background: white;
+  color: #3b82f6;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  transition: 0.3s linear;
+  z-index: 1;
 }
 
 #download-btn::after {
-  background-color: white;
   content: '';
-  display: block;
-  height: 100%;
-  width: 100%;
-  border-radius: 8px;
   position: absolute;
-  left: 0;
+  width: 100%;
+  height: 100%;
   top: 0;
-  transform: translate(-100%, 0%) rotate(0deg);
-  transform-origin: 50% 50%;
-  transition: 300ms transform ease-in-out;
-  will-change: transform;
+  left: 0;
+  background: #3b82f6;
+  transform: scaley(0);
+  border-radius: 5px;
+  transform-origin: bottom;
+  transition: transform 200ms ease-in;
   z-index: -1;
 }
 
-#download-btn:hover::after {
-  transform: translate(0, 0);
+#download-btn:hover {
+  color: white;
 }
 
-#download-btn:hover {
-  border: 0;
-  color: #055c8e;
-  transform: scale(1.1);
-  will-change: transform;
+#download-btn:hover::after {
+  transform: scaley(1);
 }
 </style>

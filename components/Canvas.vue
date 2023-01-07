@@ -57,8 +57,8 @@ const travel = (url) => {
   if (!camera || !app) return
 
   gsap.to(app, {
-    duration: 0.5,
     opacity: 0,
+    duration: 0.5,
   })
   gsap.to(camera.position, {
     z: 20,
@@ -78,16 +78,16 @@ const travel = (url) => {
     delay: 0.5,
     onComplete: () => {
       router.push({ path: url })
-    },
-  })
-  gsap.to(camera.position, {
-    delay: 2.502,
-    onComplete: () => {
-      // Reset the original position
+
+      // Reset to original position
       camera.rotation.set(0, 0, 0)
       camera.position.set(0, 0, 57)
-      app.style.opacity = 1
     },
+  })
+  gsap.to(app, {
+    opacity: 1,
+    duration: 0.5,
+    delay: 2.501,
   })
 }
 
