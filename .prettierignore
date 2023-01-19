@@ -2,3 +2,4 @@ __build__
 dist
 coverage
 .output
+.netlify

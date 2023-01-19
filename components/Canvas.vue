@@ -84,11 +84,6 @@ const travel = (url) => {
       camera.position.set(0, 0, 57)
     },
   })
-  gsap.to(app, {
-    opacity: 1,
-    duration: 0.5,
-    delay: 2.501,
-  })
 }
 
 // Add/Remove the plane mesh

@@ -3,3 +3,13 @@
     <Projects />
   </div>
 </template>
+
+<script setup>
+import gsap from 'gsap'
+
+onMounted(() => {
+  gsap.to(app, {
+    opacity: 1,
+  })
+})
+</script>
