@@ -29,8 +29,10 @@ export default defineNuxtConfig({
   // Auto import components
   components: true,
 
-  // Modules for dev and build (recommended)
-  buildModules: ['@nuxtjs/google-fonts'],
+  // Modules
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
+
+  postcss: require('./postcss.config'),
 
   googleFonts: {
     families: {
@@ -41,17 +43,9 @@ export default defineNuxtConfig({
     },
   },
 
-  // Modules
-  modules: [],
-
-  // Build Configuration
-  build: {
-    postcss: {
-      postcssOptions: require('./postcss.config'),
+  runtimeConfig: {
+    public: {
+      NODE_ENV: process.env.NODE_ENV || 'development',
     },
-  },
-
-  publicRuntimeConfig: {
-    NODE_ENV: process.env.NODE_ENV,
   },
 })
