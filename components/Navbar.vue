@@ -86,6 +86,7 @@
 import gsap from 'gsap'
 
 const route = useRoute()
+const router = useRouter()
 
 const routes = [
   {
@@ -150,9 +151,15 @@ function closeNavbar() {
  * @param {string} url
  */
 function goto(e, url) {
-  if (route.path === url) return
   e.preventDefault()
-  canvas.value.travel(url)
+
+  if (route.path === url) return
+  gsap.to(app, {
+    opacity: 0,
+    onComplete: () => {
+      router.push({ path: url })
+    },
+  })
   closeNavbar()
 }
 </script>

@@ -12,16 +12,11 @@
 </template>
 
 <script setup>
-import gsap from 'gsap'
 import { getTotalHeight } from '~~/utils/helpers'
 
 const blueBG = ref()
 
 onMounted(() => {
-  gsap.to(app, {
-    opacity: 1,
-  })
-
   blueBG.value.style.height = getTotalHeight() + 'px'
   addEventListener('resize', () => {
     blueBG.value.style.height = getTotalHeight() + 'px'

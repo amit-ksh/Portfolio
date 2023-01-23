@@ -1,10 +1,8 @@
 <template>
   <Navbar />
-  <NuxtLayout>
-    <div id="app">
-      <NuxtPage />
-    </div>
-  </NuxtLayout>
+  <div id="app">
+    <NuxtPage />
+  </div>
 </template>
 
 <script lang="ts" setup>

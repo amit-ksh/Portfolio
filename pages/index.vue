@@ -48,10 +48,6 @@ const roleRef = ref()
 const socialsRef = ref()
 
 onMounted(() => {
-  gsap.to(app, {
-    opacity: 1,
-  })
-
   gsap.to(introRef.value, {
     opacity: 1,
     y: 0,
