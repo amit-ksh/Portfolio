@@ -1,88 +1,85 @@
 <template>
-  <div class="absolute">
-    <Canvas ref="canvas" />
+  <Canvas ref="canvas" />
 
-    <nav
-      class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] translate-x-[-50%] z-50"
-    >
-      <div class="max-w-7xl mx-auto">
-        <div class="absolute left-[50%] bottom-0 translate-x-[-50%]">
-          <button
-            ref="openBtn"
-            tabindex="0"
-            data-collapse-toggle="navbar-default"
-            type="button"
-            class="inline-flex items-center p-3 text-sm rounded-lg bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 md:hidden"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-            @click="openNavbar"
-          >
-            <span class="sr-only">Open menu</span>
-            <svg
-              class="w-6 h-6 fill-white"
-              aria-hidden="true"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </button>
-        </div>
-
-        <div
-          id="navbar-default"
-          ref="navbarRef"
-          class="relative group translate-y-[100vh] md:block md:translate-y-0"
+  <nav
+    class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] translate-x-[-50%] z-50"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div class="absolute left-[50%] bottom-0 translate-x-[-50%]">
+        <button
+          ref="openBtn"
+          tabindex="0"
+          data-collapse-toggle="navbar-default"
+          type="button"
+          class="inline-flex items-center p-3 text-sm rounded-lg bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 md:hidden"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+          @click="openNavbar"
         >
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
-          ></div>
-          <div
-            class="bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative rounded-lg leading-none flex items-center justify-center space-x-6 py-5 px-6"
+          <span class="sr-only">Open menu</span>
+          <svg
+            class="w-6 h-6 fill-white"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            <div class="w-full flex flex-col">
-              <div class="flex justify-end">
-                <CloseButton
-                  ref="closeBtn"
-                  class="md:hidden mb-4"
-                  role="button"
-                  tabindex="0"
-                  @click="closeNavbar"
-                  @keydown.enter="closeNavbar"
-                />
-              </div>
-              <ul
-                class="flex flex-col md:flex-row align-middle justify-center gap-4 font-semibold"
-              >
-                <li
-                  v-for="r in routes"
-                  :key="r.name"
-                  :class="`text-white text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500
+            <path
+              fill-rule="evenodd"
+              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="navbar-default"
+        ref="navbarRef"
+        class="relative group translate-y-[100vh] md:block md:translate-y-0"
+      >
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
+        ></div>
+        <div
+          class="bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative rounded-lg leading-none flex items-center justify-center space-x-6 py-5 px-6"
+        >
+          <div class="w-full flex flex-col">
+            <div class="flex justify-end">
+              <CloseButton
+                ref="closeBtn"
+                class="md:hidden mb-4"
+                role="button"
+                tabindex="0"
+                @click="closeNavbar"
+                @keydown.enter="closeNavbar"
+              />
+            </div>
+            <ul
+              class="flex flex-col md:flex-row align-middle justify-center gap-4 font-semibold"
+            >
+              <li
+                v-for="r in routes"
+                :key="r.name"
+                :class="`text-white text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500
                 hover:bg-white focus:bg-white hover:scale-105 focus:text-blue-500 text-center
                 ${route.path === r.url && 'text-blue-500 bg-white'}`"
+              >
+                <NuxtLink
+                  tabindex="0"
+                  class="block py-2 px-4 cursor-pointer"
+                  @click="(e) => goto(e, r.url)"
+                  @keydown.enter="(e) => goto(e, r.url)"
                 >
-                  <NuxtLink v-slot="{ href }" :to="r.url" custom>
-                    <button
-                      class="block py-2 px-4 cursor-pointer"
-                      @click="(e) => goto(e, href)"
-                      @keydown.enter="(e) => goto(e, href)"
-                    >
-                      {{ r.name }}
-                    </button>
-                  </NuxtLink>
-                </li>
-              </ul>
-            </div>
+                  {{ r.name }}
+                </NuxtLink>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </template>
 
 <script setup>
