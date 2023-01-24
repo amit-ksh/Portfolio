@@ -12,8 +12,10 @@ import {
   DirectionalLight,
 } from 'three'
 
-import { getTotalHeight, getTotalWidth, resizeCanvas } from '~/utils/helpers'
 import {
+  getTotalHeight,
+  getTotalWidth,
+  resizeCanvas,
   animatePlane,
   createPlane,
   createStars,
@@ -99,9 +101,11 @@ const travel = (url) => {
 watch(route, (newRoute) => {
   gsap.to(app, {
     opacity: 0,
-    duration: 0.1,
+    duration: 0,
+    onComplete: () => {
+      travel(newRoute.path)
+    },
   })
-  travel(newRoute.path)
 })
 
 onMounted(() => {
