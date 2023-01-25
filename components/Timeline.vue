@@ -9,7 +9,7 @@
         class="bg-white p-4 rounded-md mb-10 flex flex-col relative before:absolute before:top-2 before:w-4 before:h-4 before:rounded-full before:left-[-35px] before:bg-white"
       >
         <time class="text-sm font-exo leading-none">{{ d.time }}</time>
-        <h3 class="mt-1 text-lg font-semibold text-gray-900">
+        <h3 class="my-2 text-sm font-bold text-gray-900">
           {{ d.title }}
         </h3>
         <p class="text-base font-exo">

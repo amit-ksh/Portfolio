@@ -7,7 +7,7 @@ export const projects = [
     image: iphoneImg,
     title: 'Locknest',
     description:
-      'Locknest is the Progressive Web App(PWA) application that allows users to store and manage their passwords and other personal information like bank accounts and payment card infos in a single place. In short, it is the online password manager or digital wallet for the users.',
+      "Locknest is the Progressive Web App(PWA) application that manages the user's passwords and other personal information in a single place.",
     techStack: [
       'nextjs',
       'typescript',
@@ -35,7 +35,7 @@ export const projects = [
     image: laptopImg,
     title: 'Weather App',
     description:
-      'Weather App is a React web app which display the weather details from all around the world.',
+      'Weather App is a React web app that displays weather details from all around the world.',
     techStack: ['react', 'node', 'chakraui', 'netlify'],
     url: {
       github: 'https://github.com/amit-ksh/weather-app',

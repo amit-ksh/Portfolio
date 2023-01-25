@@ -14,7 +14,7 @@
         <h3 class="font-bold text-xl md:text-2xl tracking-wide text-justify">
           {{ row.name }}
         </h3>
-        <p class="text-sm md:text-lg">{{ row.value }}</p>
+        <p class="text-sm md:text-lg text-justify">{{ row.value }}</p>
       </div>
     </div>
   </section>

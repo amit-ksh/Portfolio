@@ -11,7 +11,7 @@
     </div>
     <div class="p-4">
       <h2 class="text-xl mt-2 mb-2 font-bold">{{ title }}</h2>
-      <p class="text-sm font-mono">{{ description }}</p>
+      <p class="text-sm font-mono text-justify">{{ description }}</p>
     </div>
     <div class="mt-auto">
       <!-- TECH STACK -->
