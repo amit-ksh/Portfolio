@@ -231,13 +231,13 @@ export const animatePlane = (planeMesh, raycaster, frame) => {
 
 /**
  * Resize the Canvas to the given width and height
- * @param {WebGLRenderer}     renderer
- * @param {PerspectiveCamera} camera
- * @param {int}                  width
- * @param {int}                  height
+ * @param {WebGLRenderer}         renderer
+ * @param {PerspectiveCamera}     camera
+ * @param {int}                   width
+ * @param {int}                   height
  */
 export const resizeCanvas = (renderer, camera, width, height) => {
-  renderer.setSize(width, height)
   camera.aspect = width / height
   camera.updateProjectionMatrix()
+  renderer.setSize(width, height)
 }

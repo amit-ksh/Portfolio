@@ -9,6 +9,11 @@
 
 <script lang="ts" setup>
 import '@/assets/css/main.css'
+import gsap from 'gsap'
+
+onMounted(() => {
+  gsap.fromTo('#app', { opacity: 0 }, { opacity: 1, delay: 3, duration: 1 })
+})
 </script>
 
 <style>

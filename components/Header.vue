@@ -19,6 +19,7 @@ onMounted(() => {
     y: 0,
     duration: 1.5,
     ease: 'expo',
+    delay: 3,
   })
 })
 </script>

@@ -1,8 +1,12 @@
 <template>
-  <canvas ref="canvas" class="absolute z-[-1]"></canvas>
+  <canvas
+    ref="canvas"
+    :class="`!w-full absolute z-[-1] ${route.path === '/' ? '!h-full' : ''}`"
+  ></canvas>
 </template>
 
 <script setup>
+import gsap from 'gsap'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import {
   Raycaster,
@@ -11,7 +15,6 @@ import {
   WebGLRenderer,
   DirectionalLight,
 } from 'three'
-
 import {
   getTotalHeight,
   getTotalWidth,
@@ -21,7 +24,6 @@ import {
   createStars,
   generatePlane,
 } from '~/utils/helpers'
-import gsap from 'gsap'
 
 const route = useRoute()
 const canvas = ref()
@@ -54,12 +56,23 @@ light.position.set(0, -1, 1)
 const backLight = new DirectionalLight(0xffffff, 1)
 backLight.position.set(0, 0, -1)
 
+const disableScroll = () => {
+  document.querySelector('body').style.overflow = 'hidden'
+}
+const enableScroll = () => {
+  document.querySelector('body').style.overflow = 'visible'
+}
+
 // Page Transition Animation
 const travel = (url) => {
   if (!camera || !app) return
 
+  // Setting the canvas size to 100% of window
+  // for the consistent animation
+  resizeCanvas(renderer, camera, innerWidth, innerHeight)
+  disableScroll()
   gsap.to(camera.position, {
-    z: 25,
+    z: 30,
     ease: 'power3.inOut',
     duration: 2,
   })
@@ -69,18 +82,19 @@ const travel = (url) => {
     duration: 2,
   })
   gsap.to(camera.position, {
-    y: 800,
-    z: route.path === '/' ? -800 : 0,
+    y: 1000,
     ease: 'power3.in',
-    duration: 2,
+    duration: 2.5,
     delay: 0.5,
     onComplete: () => {
       if (url === '/') {
         scene.add(planeMesh)
+        resizeCanvas(renderer, camera, innerWidth, innerHeight)
       } else {
         scene.remove(planeMesh)
+        resizeCanvas(renderer, camera, getTotalWidth(), getTotalHeight())
       }
-
+      enableScroll()
       // Reset to original position
       camera.rotation.set(0, 0, 0)
       camera.position.set(
@@ -91,7 +105,7 @@ const travel = (url) => {
 
       gsap.to(app, {
         opacity: 1,
-        duration: 0.5,
+        duration: 1,
       })
     },
   })
@@ -132,11 +146,14 @@ onMounted(() => {
   scene.add(backLight)
 
   generatePlane(planeMesh, world)
-  if (route.path === '/') scene.add(planeMesh)
+  if (route.path === '/') {
+    setTimeout(() => {
+      scene.add(planeMesh)
+    }, 3000)
+  }
   scene.add(stars)
 
   const mouse = { x: undefined, y: undefined }
-
   let frame = 0
   function animate() {
     requestAnimationFrame(animate)
@@ -145,23 +162,59 @@ onMounted(() => {
     frame += 0.01
 
     if (route.path === '/') animatePlane(planeMesh, raycaster, frame)
-    if (route.path === '/') {
-      resizeCanvas(renderer, camera, innerWidth, innerHeight)
-    } else {
-      resizeCanvas(renderer, camera, getTotalWidth(), getTotalHeight())
-    }
     stars.rotation.x += 0.0001
   }
 
   animate()
 
+  // PLANE MESH HOVER EFFECT
   addEventListener('mousemove', (event) => {
     mouse.x = (event.clientX / innerWidth) * 2 - 1
     mouse.y = -(event.clientY / innerHeight) * 2 + 1
   })
 
+  // WINDOW RESIZE HANDLERS
   window.addEventListener('resize', () => {
     resizeCanvas(renderer, camera, getTotalWidth(), getTotalHeight())
+  })
+
+  window.addEventListener('orientationchange', () => {
+    resizeCanvas(renderer, camera, getTotalWidth(), getTotalHeight())
+  })
+
+  // Setting the canvas size to 100% of window
+  // for the consistent animation
+  resizeCanvas(renderer, camera, innerWidth, innerHeight)
+
+  disableScroll()
+  gsap.to(camera.rotation, {
+    x: Math.PI / 5,
+    ease: 'power3.inOut',
+    duration: 2,
+  })
+  gsap.to(camera.position, {
+    y: 800,
+    z: -600,
+    ease: 'power3.in',
+    duration: 2,
+    delay: 1,
+    onComplete: () => {
+      if (route.path === '/') {
+        scene.add(planeMesh)
+        resizeCanvas(renderer, camera, innerWidth, innerHeight)
+      } else {
+        scene.remove(planeMesh)
+        resizeCanvas(renderer, camera, getTotalWidth(), getTotalHeight())
+      }
+
+      enableScroll()
+      camera.rotation.set(0, 0, 0)
+      camera.position.set(
+        CAMERA_POSITION.x,
+        CAMERA_POSITION.y,
+        CAMERA_POSITION.z
+      )
+    },
   })
 })
 </script>

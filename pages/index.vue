@@ -14,7 +14,7 @@
         class="font-mono mb-4 text-2xl md:text-4xl tracking-wide opacity-0 text-white"
         style="translate: 0 30px"
       >
-        Hey👋! I'm <span class="font-bold">Amit Kumar Sharma</span>
+        Hey👋! I'm <span class="font-bold">Amit</span>
       </h1>
       <h3
         ref="roleRef"
@@ -29,7 +29,7 @@
           ref="downloadBtn"
           href="https://drive.google.com/file/d/1J-aLetwdiJEEopSv2rVqddBlsvP2FhQa/view?usp=share_link"
           download="amit-resume.pdf"
-          class="py-3 px-8 uppercase font-bold text-center relative"
+          class="mt-2 py-3 px-6 md:px-8 uppercase font-bold text-center relative opacity-0"
           aria-label="download amit's resume"
           target="_blank"
         >
@@ -46,6 +46,7 @@ import gsap from 'gsap'
 const introRef = ref()
 const roleRef = ref()
 const socialsRef = ref()
+const downloadBtn = ref()
 
 onMounted(() => {
   gsap.to(introRef.value, {
@@ -53,6 +54,7 @@ onMounted(() => {
     y: 0,
     duration: 1.5,
     ease: 'expo',
+    delay: 3,
   })
 
   gsap.to(roleRef.value, {
@@ -60,13 +62,20 @@ onMounted(() => {
     y: 0,
     duration: 1.5,
     ease: 'expo',
-    delay: 0.3,
+    delay: 3,
   })
 
   gsap.to(socialsRef.value, {
     y: '8px',
     ease: 'back.inOut',
     duration: 1.5,
+    delay: 3,
+  })
+
+  gsap.to(downloadBtn.value, {
+    opacity: 1,
+    ease: 'back.inOut',
+    delay: 3,
   })
 })
 </script>
