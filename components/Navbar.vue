@@ -133,7 +133,7 @@ function closeNavbar() {
   if (!isNavOpen.value) return
 
   gsap.to(navbarRef.value, {
-    y: '50vh',
+    y: '100vh',
     ease: 'ease.in',
     duration: 1,
   })

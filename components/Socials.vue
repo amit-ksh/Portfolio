@@ -26,11 +26,6 @@ const socials = [
     logo: 'linkedin',
   },
   {
-    name: 'Github',
-    url: 'https://github.com/amit-ksh',
-    logo: 'github',
-  },
-  {
     name: 'Twitter',
     url: 'https://twitter.com/amit__ksh',
     logo: 'twitter',
@@ -39,6 +34,11 @@ const socials = [
     name: 'CodePen.io',
     url: 'https://codepen.io/amit-ksh',
     logo: 'codepen',
+  },
+  {
+    name: 'Github',
+    url: 'https://github.com/amit-ksh',
+    logo: 'github',
   },
 ]
 </script>
