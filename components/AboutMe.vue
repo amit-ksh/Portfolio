@@ -22,7 +22,7 @@
 
 <script setup>
 import gsap from 'gsap'
-import { aboutme } from '~/store/about'
+import { aboutme } from '~~/store/about'
 
 const aboutRef = ref()
 

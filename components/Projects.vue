@@ -25,7 +25,7 @@
 
 <script setup>
 import gsap from 'gsap'
-import { projects } from '~/store/projects'
+import { projects } from '~~/store/projects'
 
 const projectRef = ref()
 

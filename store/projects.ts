@@ -2,7 +2,16 @@ import iphoneImg from '~/assets/images/iphone.jpg'
 import laptopImg from '~/assets/images/laptop.jpg'
 import personImg from '~/assets/images/person.jpg'
 
-export const projects = [
+export const projects: Array<{
+  image: string
+  title: string
+  description: string
+  techStack: string[]
+  url: {
+    github?: string
+    website?: string
+  }
+}> = [
   {
     image: iphoneImg,
     title: 'Locknest',

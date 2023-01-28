@@ -1,6 +1,6 @@
-export const languages = ['python', 'js']
+export const languages: string[] = ['python', 'js']
 
-export const web = [
+export const web: string[] = [
   'html',
   'css',
   'react',
@@ -14,9 +14,15 @@ export const web = [
   'postgres',
 ]
 
-export const ml = ['numpy', 'pandas', 'matplotlib', 'scikit-learn', 'pytorch']
+export const ml: string[] = [
+  'numpy',
+  'pandas',
+  'matplotlib',
+  'scikit-learn',
+  'pytorch',
+]
 
-export const logoToNameMap = {
+export const logoToNameMap: { [key: string]: string } = {
   // Languages
   python: 'Python',
   js: 'JavaScript',

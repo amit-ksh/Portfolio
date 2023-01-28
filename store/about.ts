@@ -1,11 +1,12 @@
 import { diffDate } from '~/utils/helpers'
+
 const daysLived = diffDate(2001, 11, 10)
 const daysLivedString = computed(
   () =>
     `${daysLived.year} years, ${daysLived.month} months, ${daysLived.date} days!`
 )
 
-export const aboutme = [
+export const aboutme: Array<{ name: string; value: string }> = [
   {
     name: 'Name',
     value: 'Amit Kumar Sharma',

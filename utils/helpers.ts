@@ -8,6 +8,8 @@ import {
   PointsMaterial,
   Float32BufferAttribute,
   Points,
+  PerspectiveCamera,
+  WebGLRenderer,
 } from 'three'
 import gsap from 'gsap'
 
@@ -67,14 +69,14 @@ export const getTotalWidth = (): number => {
  * @param  {int} logo
  * @return name: string
  */
-export const logoToName = (logo) => logoToNameMap[logo] || ''
+export const logoToName = (logo: string) => logoToNameMap[logo] || ''
 
 /**
  * Create the plane mesh using THREE.Mesh
  * @param {Object} world
  * @returns plane: Mesh
  */
-export const createPlane = (world) => {
+export const createPlane = (world: any) => {
   const planeGeometry = new PlaneGeometry(
     world.plane.width,
     world.plane.height,
@@ -94,7 +96,7 @@ export const createPlane = (world) => {
  * @param {Mesh}    planeMesh
  * @param {Object}  world
  */
-export const generatePlane = (planeMesh, world) => {
+export const generatePlane = (planeMesh: any, world: any) => {
   planeMesh.geometry.dispose()
   planeMesh.geometry = new PlaneGeometry(
     world.plane.width,
@@ -108,7 +110,7 @@ export const generatePlane = (planeMesh, world) => {
   const randomValues = []
   for (let i = 0; i < array.length; i++) {
     if (i % 3 === 0) {
-      const x = array[i]
+      const x = array[i + 0]
       const y = array[i + 1]
       const z = array[i + 2]
 
@@ -165,7 +167,7 @@ export const createStars = (nStars = 10000) => {
  * @param {Raycaster} raycaster
  * @param {float}     frame
  */
-export const animatePlane = (planeMesh, raycaster, frame) => {
+export const animatePlane = (planeMesh: any, raycaster: any, frame: number) => {
   const { array, originalPosition, randomValues } =
     planeMesh.geometry.attributes.position
 
@@ -236,7 +238,12 @@ export const animatePlane = (planeMesh, raycaster, frame) => {
  * @param {int}                   width
  * @param {int}                   height
  */
-export const resizeCanvas = (renderer, camera, width, height) => {
+export const resizeCanvas = (
+  renderer: WebGLRenderer,
+  camera: PerspectiveCamera,
+  width: number,
+  height: number
+) => {
   camera.aspect = width / height
   camera.updateProjectionMatrix()
   renderer.setSize(width, height)
