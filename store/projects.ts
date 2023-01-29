@@ -44,7 +44,7 @@ export const projects: Array<{
     image: laptopImg,
     title: 'Weather App',
     description:
-      'Weather App is a React web app that displays weather details from all around the world.',
+      'Weather App is a React web app that shows the weather details from all around the world.',
     techStack: ['react', 'node', 'chakraui', 'netlify'],
     url: {
       github: 'https://github.com/amit-ksh/weather-app',

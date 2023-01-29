@@ -43,7 +43,7 @@
             class="absolute -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
           ></div>
           <div
-            class="bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative rounded-lg leading-none flex items-center justify-center space-x-6 py-5 px-6"
+            class="bg-gradient-to-r from-[#2a2a72] to-[#009ffd] relative rounded-lg leading-none flex items-center justify-center space-x-6 py-5 px-6 landscape:px-2 landscape:py-4"
           >
             <div class="w-full flex flex-col">
               <div class="flex justify-end">
@@ -57,7 +57,7 @@
                 />
               </div>
               <ul
-                class="flex flex-col md:flex-row align-middle justify-center gap-4 font-semibold"
+                class="flex flex-col md:flex-row align-middle justify-evenly gap-4 font-semibold"
               >
                 <li
                   v-for="r in routes"
