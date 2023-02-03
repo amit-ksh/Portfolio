@@ -1,5 +1,5 @@
 <template>
-  <section class="my-10">
+  <section id="education">
     <Header>Education</Header>
 
     <div class="ml-6 md:mx-auto max-w-2xl">

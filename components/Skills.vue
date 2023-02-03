@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-10">
+  <section id="skills">
     <Header>Skills</Header>
 
     <!-- LANGUAGES -->

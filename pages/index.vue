@@ -16,13 +16,13 @@
       >
         Hey👋! I'm <span class="font-bold">Amit</span>
       </h1>
-      <h3
+      <h2
         ref="roleRef"
         class="mb-4 font-exo text-xl md:text-2xl font-semibold tracking-wide text-white opacity-0"
         style="translate: 0 30px"
       >
         Web Developer
-      </h3>
+      </h2>
       <div class="flex justify-end mt-4">
         <a
           id="download-btn"
@@ -62,7 +62,7 @@ onMounted(() => {
     y: 0,
     duration: 1.5,
     ease: 'expo',
-    delay: 3,
+    delay: 3.2,
   })
 
   gsap.to(socialsRef.value, {

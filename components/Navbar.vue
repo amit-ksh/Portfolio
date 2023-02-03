@@ -64,9 +64,9 @@
                   :key="r.url"
                   :class="`text-white text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500
                 hover:bg-white focus:bg-white hover:scale-105 focus:text-blue-500 text-center
-                ${route.path === r.url && 'text-blue-500 bg-white'}`"
+                ${route.path === r.url && 'text-blue-600 bg-white'}`"
                 >
-                  <NuxtLink v-slot="{ navigate }" :to="r.url" custom>
+                  <NuxtLink v-slot="{ navigate }" :to="r.url">
                     <button
                       class="block py-2 px-4 cursor-pointer w-full"
                       @click="navigate"

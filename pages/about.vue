@@ -6,7 +6,7 @@
     ></div>
 
     <AboutMe />
-    <Education />
+    <Education class="my-20" />
     <Skills />
   </div>
 </template>

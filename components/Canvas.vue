@@ -140,6 +140,7 @@ onMounted(() => {
 
   controls = new OrbitControls(camera, renderer.domElement)
   controls.enableZoom = false
+  controls.enableRotate = false
   camera.position.z = CAMERA_POSITION.z
 
   scene.add(light)

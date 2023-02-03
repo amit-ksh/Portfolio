@@ -11,9 +11,9 @@
         :key="row.attr"
         class="text-xl font-mono mb-2"
       >
-        <h3 class="font-bold text-xl md:text-2xl tracking-wide text-justify">
+        <h2 class="font-bold text-xl md:text-2xl tracking-wide text-justify">
           {{ row.name }}
-        </h3>
+        </h2>
         <p class="text-sm md:text-lg text-justify">{{ row.value }}</p>
       </div>
     </div>

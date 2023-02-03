@@ -173,10 +173,10 @@ export const animatePlane = (planeMesh: any, raycaster: any, frame: number) => {
 
   for (let i = 0; i < array.length; i += 3) {
     // x
-    array[i] = originalPosition[i] + Math.cos(frame + randomValues[i]) * 0.015
+    array[i] = originalPosition[i] + Math.cos(frame + randomValues[i]) * 0.007
     // y
     array[i + 1] =
-      originalPosition[i + 1] + Math.sin(frame + randomValues[i + 1]) * 0.005
+      originalPosition[i + 1] + Math.sin(frame + randomValues[i + 1]) * 0.002
   }
   planeMesh.geometry.attributes.position.needsUpdate = true
 

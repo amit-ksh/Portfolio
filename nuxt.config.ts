@@ -11,7 +11,12 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: '' },
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Young self-motivated full-stack developer and a ML enthusiast from India. Have expertise in modern tech stacks like React, Next, Vue, Node.js and PostgreSQL.',
+        },
         { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

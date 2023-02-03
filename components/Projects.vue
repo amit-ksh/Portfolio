@@ -5,7 +5,7 @@
     <div class="flex flex-wrap sm:mx-4 ml-2">
       <div
         v-for="project in projects"
-        id="project"
+        :id="project.title"
         ref="projectRef"
         :key="project.title"
         class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 sm:p-4 py-4"

@@ -26,7 +26,7 @@ export const aboutme: Array<{ name: string; value: string }> = [
   },
   {
     name: '',
-    value: `Over the last two years, I've gained expertise in modern tech stacks like React, Next, Vue, NodeJS and PostgreSQL.
+    value: `Over the last two years, I've gained expertise in modern tech stacks like React, Next, Vue, Node.js and PostgreSQL.
                       I've worked on plenty of projects including REST APIs, Websites and CLIs.
                       I'm currently focusing on participating in developer friendly events and contributing to opensource projects & softwares.`,
   },
