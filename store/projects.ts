@@ -14,6 +14,24 @@ export const projects: Array<{
 }> = [
   {
     image: iphoneImg,
+    title: 'Chorus',
+    description:
+      'Chorus is a Spotify clone built using Next.js, ChakraUI and MongoDB.',
+    techStack: [
+      'nextjs',
+      'typescript',
+      'chakraui',
+      'prisma',
+      'mongodb',
+      'vercel',
+    ],
+    url: {
+      github: 'https://github.com/amit-ksh/chorus',
+      website: 'https://chours.vercel.app/',
+    },
+  },
+  {
+    image: iphoneImg,
     title: 'Locknest',
     description:
       "Locknest is the Progressive Web App(PWA) application that manages the user's passwords and other personal information in a single place.",

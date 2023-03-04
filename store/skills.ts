@@ -1,4 +1,4 @@
-export const languages: string[] = ['python', 'js']
+export const languages: string[] = ['python', 'js', 'typescript']
 
 export const web: string[] = [
   'html',
@@ -41,6 +41,7 @@ export const logoToNameMap: { [key: string]: string } = {
   express: 'Express.js',
   prisma: 'Prisma',
   postgres: 'PostgreSQL',
+  mongodb: 'Mongo DB',
   gsap: 'GSAP',
   flask: 'Flask',
   // ML
