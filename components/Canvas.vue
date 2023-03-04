@@ -18,15 +18,20 @@ import {
 import {
   getTotalHeight,
   getTotalWidth,
+  disableScroll,
+  enableScroll,
+} from '~/utils/helpers'
+import {
   resizeCanvas,
   animatePlane,
   createPlane,
   createStars,
   generatePlane,
-} from '~/utils/helpers'
+} from '~/utils/three'
 
 const route = useRoute()
 const canvas = ref()
+const animating = ref()
 let app = null
 
 //------- CANVAS MAGIC ----------->
@@ -56,15 +61,8 @@ light.position.set(0, -1, 1)
 const backLight = new DirectionalLight(0xffffff, 1)
 backLight.position.set(0, 0, -1)
 
-const disableScroll = () => {
-  document.querySelector('body').style.overflow = 'hidden'
-}
-const enableScroll = () => {
-  document.querySelector('body').style.overflow = 'visible'
-}
-
 // Page Transition Animation
-const travel = (url) => {
+const travel = () => {
   if (!camera || !app) return
 
   // Setting the canvas size to 100% of window
@@ -87,13 +85,6 @@ const travel = (url) => {
     duration: 2.5,
     delay: 0.5,
     onComplete: () => {
-      if (url === '/') {
-        scene.add(planeMesh)
-        resizeCanvas(renderer, camera, innerWidth, innerHeight)
-      } else {
-        scene.remove(planeMesh)
-        resizeCanvas(renderer, camera, getTotalWidth(), getTotalHeight())
-      }
       enableScroll()
       // Reset to original position
       camera.rotation.set(0, 0, 0)
@@ -106,20 +97,37 @@ const travel = (url) => {
       gsap.to(app, {
         opacity: 1,
         duration: 1,
+        onComplete: () => {},
       })
+      animating.value = false
     },
   })
 }
 
 // Activating page transition animation
-watch(route, (newRoute) => {
+watch(route, () => {
+  if (animating.value) return
+
+  animating.value = true
   gsap.to(app, {
     opacity: 0,
     duration: 0,
     onComplete: () => {
-      travel(newRoute.path)
+      travel()
     },
   })
+})
+
+watch(animating, () => {
+  if (animating.value) return
+
+  if (route.path === '/') {
+    scene.add(planeMesh)
+    resizeCanvas(renderer, camera, innerWidth, innerHeight)
+  } else {
+    scene.remove(planeMesh)
+    resizeCanvas(renderer, camera, getTotalWidth(), getTotalHeight())
+  }
 })
 
 onMounted(() => {
