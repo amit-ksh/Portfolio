@@ -1,10 +1,10 @@
 <template>
   <div class="relative flex flex-col items-center group">
     <img
-      :src="`/svg/${logo}.svg`"
+      :src="`/svg/tech/${logo}.svg`"
       :alt="name"
       :data-tooltip-target="`tooltip-${name}`"
-      class="m-auto w-full h-full max-h-20 hover:scale-105 transition duration-200 hover:cursor-pointer"
+      class="m-auto w-full h-full max-h-20 hover:scale-105 transition duration-400"
     />
     <div
       v-if="showTooltip"

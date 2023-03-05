@@ -1,10 +1,10 @@
 <template>
   <div
-    class="c-card flex flex-col h-full bg-white shadow-md hover:shadow-xl focus:shadow-xl rounded-lg overflow-hidden"
+    class="c-card flex flex-col h-full bg-white shadow-md rounded-lg overflow-hidden"
   >
-    <div class="relative pb-48 overflow-hidden">
+    <div class="relative pb-48 overflow-hidden border-4 rounded-lg shadow-lg">
       <img
-        class="absolute inset-0 h-full w-full object-cover"
+        class="absolute inset-0 h-full w-full object-cover bg-black"
         :src="imageUrl"
         :alt="title"
       />
@@ -92,13 +92,3 @@ defineProps({
   },
 })
 </script>
-
-<style scoped>
-img {
-  transition: transform 0.3s ease-in-out;
-}
-
-img:hover {
-  transform: scale(1.05);
-}
-</style>
