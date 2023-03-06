@@ -1,6 +1,6 @@
 <template>
   <section id="skills">
-    <Header>Skills</Header>
+    <Heading>Skills</Heading>
 
     <!-- LANGUAGES -->
     <div class="mb-8">

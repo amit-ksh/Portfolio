@@ -1,6 +1,6 @@
 <template>
   <div id="projects">
-    <Header>Projects</Header>
+    <Heading>Projects</Heading>
 
     <div class="flex flex-wrap sm:mx-4 ml-2">
       <div

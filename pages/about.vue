@@ -9,3 +9,9 @@
     <Skills />
   </div>
 </template>
+
+<script setup>
+definePageMeta({
+  layout: 'with-header',
+})
+</script>

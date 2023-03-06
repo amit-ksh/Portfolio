@@ -5,3 +5,9 @@
     </section>
   </div>
 </template>
+
+<script>
+definePageMeta({
+  layout: 'with-header',
+})
+</script>
