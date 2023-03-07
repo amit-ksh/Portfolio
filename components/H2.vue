@@ -1,11 +1,11 @@
 <template>
-  <h1
+  <h2
     ref="titleRef"
     class="text-white font-exo text-5xl mb-6 opacity-0 uppercase text-center"
     style="translate: 0 30px"
   >
     <slot />
-  </h1>
+  </h2>
 </template>
 
 <script setup>

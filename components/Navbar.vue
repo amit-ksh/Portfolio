@@ -49,7 +49,7 @@
               <div class="flex justify-end">
                 <CloseButton
                   ref="closeBtn"
-                  class="md:hidden mb-4"
+                  class="md:hidden mb-6 mr-4"
                   role="button"
                   tabindex="0"
                   @click="closeNavbar"

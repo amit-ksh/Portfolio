@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white rounded-lg py-3 px-6 z-50">
-    <h3 class="mb-2 text-lg text-blue-500 font-bold font-exo italic">
+    <h3 class="mb-2 text-lg text-blue-700 font-bold font-exo italic">
       Connect with me!
     </h3>
 

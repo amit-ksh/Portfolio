@@ -3,7 +3,9 @@
     <div class="container px-4 mx-auto flex justify-between items-center">
       <h1>
         <span>
-          <a href="/" class="font-bold text-xl text-[#b8bee0]">amit sharma</a>
+          <NuxtLink to="/" class="font-bold text-xl text-[#b8bee0]"
+            >amit sharma</NuxtLink
+          >
         </span>
       </h1>
 

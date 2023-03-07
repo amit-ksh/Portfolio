@@ -1,6 +1,6 @@
 <template>
   <section id="education">
-    <Heading>Education</Heading>
+    <H2>Education</H2>
 
     <div class="ml-6 md:mx-auto max-w-2xl">
       <Timeline :data="education"></Timeline>

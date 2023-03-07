@@ -1,6 +1,6 @@
 <template>
   <section id="about">
-    <Heading>About Me</Heading>
+    <H2>About Me</H2>
 
     <div
       ref="aboutRef"
