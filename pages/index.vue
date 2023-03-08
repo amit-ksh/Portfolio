@@ -9,15 +9,11 @@
     </div>
 
     <div
-      class="absolute w-[80%] max-w-[800px] bg-[#161618bb] rounded-lg px-6 pt-4 pb-6 z-10"
-      style="top: 50%; left: 50%; transform: translate(-50%, -50%)"
+      ref="containerRef"
+      class="absolute w-[90%] md:w-[80%] max-w-[800px] bg-[#161618bb] rounded-lg px-6 pt-4 pb-6 z-10"
+      style="top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0"
     >
-      <div
-        id="intro"
-        ref="introRef"
-        class="font-mono mb-4 text-white opacity-0"
-        style="translate: 0 30px"
-      >
+      <div id="intro" class="font-mono mb-4 text-white">
         <div class="block md:flex gap-4 mb-4">
           <div>
             <p class="text-lg">Hey👋! My name is</p>
@@ -26,13 +22,13 @@
             </h1>
           </div>
 
-          <section id="roles" class="h-11 overflow-hidden self-end">
+          <section id="roles" class="h-14 md:h-11 overflow-hidden md:self-end">
             <h2
               v-for="role in roles"
               :key="role"
-              class="font-exo text-xl font-semibold tracking-wide text-white"
+              class="font-exo text-[1.1em] md:text-lg font-semibold tracking-wide text-white"
             >
-              <div class="py-1 px-3 mb-11 h-11 inline-block">
+              <div class="py-1 px-3 h-14 md:h-11 inline-block">
                 {{ role }}
               </div>
             </h2>
@@ -44,10 +40,9 @@
       <div class="flex justify-end mt-12">
         <a
           id="download-btn"
-          ref="downloadBtn"
           href="https://drive.google.com/file/d/1J-aLetwdiJEEopSv2rVqddBlsvP2FhQa/view?usp=share_link"
           download="amit-resume.pdf"
-          class="mt-2 py-3 px-6 md:px-8 uppercase text-center relative opacity-0"
+          class="mt-2 py-3 px-6 md:px-8 uppercase text-center relative"
           aria-label="download amit's resume"
           target="_blank"
         >
@@ -63,14 +58,12 @@ import gsap from 'gsap'
 
 const roles = ['Web Developer', 'Open Source Contributor', 'AI & ML Enthusiast']
 
-const introRef = ref()
+const containerRef = ref()
 const socialsRef = ref()
-const downloadBtn = ref()
 
 onMounted(() => {
-  gsap.to(introRef.value, {
+  gsap.to(containerRef.value, {
     opacity: 1,
-    y: 0,
     duration: 1.5,
     ease: 'expo',
     delay: 3,
@@ -80,12 +73,6 @@ onMounted(() => {
     y: '8px',
     ease: 'back.inOut',
     duration: 1.5,
-    delay: 3,
-  })
-
-  gsap.to(downloadBtn.value, {
-    opacity: 1,
-    ease: 'back.inOut',
     delay: 3,
   })
 })
@@ -121,22 +108,22 @@ h2:last-child div {
     translate: 0;
   }
   20% {
-    translate: 0 -5.62rem;
+    translate: 0 -100%;
   }
   30% {
-    translate: 0 -5.62rem;
+    translate: 0 -100%;
   }
   40% {
-    translate: 0 -11.24rem;
+    translate: 0 -200%;
   }
   60% {
-    translate: 0 -11.24rem;
+    translate: 0 -200%;
   }
   70% {
-    translate: 0 -5.62rem;
+    translate: 0 -100%;
   }
   80% {
-    translate: 0 -5.62rem;
+    translate: 0 -100%;
   }
   90% {
     translate: 0;
