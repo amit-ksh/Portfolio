@@ -38,9 +38,7 @@
             </h2>
           </section>
         </div>
-        <p>
-          I'm a <strong>Fullstack Developer</strong> from <bold>India.</bold>
-        </p>
+        <p>I'm a <strong>Fullstack Developer</strong> from <b>India.</b></p>
       </div>
 
       <div class="flex justify-end mt-12">

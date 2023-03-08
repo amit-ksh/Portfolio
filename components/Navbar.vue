@@ -3,7 +3,8 @@
     <Canvas ref="canvas" />
 
     <nav
-      class="fixed bottom-2 left-[50%] w-[80vw] md:w-[400px] translate-x-[-50%] z-50"
+      :class="isNavOpen ? 'w-[80vw]' : 'w-12 h-12'"
+      class="fixed bottom-2 left-[50%] md:w-[400px] md:h-fit translate-x-[-50%] z-50"
     >
       <div class="max-w-7xl mx-auto">
         <div class="absolute left-[50%] bottom-0 translate-x-[-50%]">
