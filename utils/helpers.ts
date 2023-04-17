@@ -1,4 +1,5 @@
 import { logoToNameMap } from '~/store/skills'
+import tailwind from 'tailwind.config'
 
 /**
  * Returns the difference between the given date and current date.
@@ -74,4 +75,51 @@ export const enableScroll = () => {
   if (!document) return
 
   document.querySelector('body')!.style.overflow = 'visible'
+}
+
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../tailwind.config.js'
+
+/**
+ *
+ * Find out if a tailwind screen value matches the current window
+ *
+ * @param {string} screen
+ *
+ * @return {Object|Boolean}
+ */
+export const screenIs = (screen = '') => {
+  if (!window) return
+
+  // "Theme" is an alias to where you keep your tailwind.config.js - most likely your project root
+  const screens = resolveConfig(tailwindConfig).theme?.screens || []
+
+  // create a keyed object of screens that match
+  const matches = Object.entries(screens).reduce(
+    (results: Record<string, boolean>, [name, size]) => {
+      const mediaQuery =
+        typeof size === 'string'
+          ? `(min-width: ${size})`
+          : `(max-width: ${size.max})`
+
+      results[name] = window.matchMedia(mediaQuery).matches
+
+      return results
+    },
+    {}
+  )
+
+  // show all matches when there is no screen choice
+  if (screen === '') {
+    return matches
+  }
+
+  // invalid screen choice
+  if (!screens[screen]) {
+    console.error(`No match for "${screen}"`)
+
+    return false
+  }
+
+  return matches[screen]
 }

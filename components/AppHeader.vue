@@ -1,7 +1,7 @@
 <template>
   <header class="py-4 sticky top-0 z-50">
     <div class="container px-4 mx-auto flex justify-between items-center">
-      <h1>
+      <h1 class="ml-8">
         <span>
           <NuxtLink to="/" class="font-bold text-xl text-[#b8bee0]"
             >amit sharma</NuxtLink
@@ -21,7 +21,7 @@
             :logo="social.logo"
             :name="social.name"
             :show-tooltip="false"
-            class="w-7 h-7"
+            class="w-5 h-5 md:w-7 md:h-7"
           />
         </a>
       </div>

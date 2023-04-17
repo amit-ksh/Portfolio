@@ -16,6 +16,7 @@
             class="inline-flex items-center p-3 text-sm rounded-lg bg-blue-500 hover:bg-blue-400 focus:bg-blue-400 md:hidden"
             aria-controls="navbar-default"
             aria-expanded="false"
+            :disabled="isNavOpen"
             @click="openNavbar"
           >
             <span class="sr-only">Open menu</span>
@@ -38,7 +39,7 @@
         <div
           id="navbar-default"
           ref="navbarRef"
-          class="relative group translate-y-[100vh] md:block md:translate-y-0"
+          class="relative group translate-y-[50vh] md:block md:translate-y-0"
         >
           <div
             class="absolute -inset-1 bg-gradient-to-r from-[#2a2a72] to-[#009ffd] rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
@@ -53,8 +54,8 @@
                   class="md:hidden mb-6 mr-4"
                   role="button"
                   tabindex="0"
-                  @click="closeNavbar"
-                  @keydown.enter="closeNavbar"
+                  @click="closeNavbar()"
+                  @keydown.enter="closeNavbar()"
                 />
               </div>
               <ul
@@ -69,6 +70,7 @@
                   <NuxtLink v-slot="{ navigate }" :to="r.url">
                     <button
                       class="block py-2 px-4 cursor-pointer w-full"
+                      tabindex="-1"
                       @click="navigate"
                       @keydown.enter="navigate"
                     >
@@ -129,26 +131,44 @@ function openNavbar() {
   isNavOpen.value = true
 }
 
-function closeNavbar() {
+function closeNavbar(routeChanged = false) {
   if (!isNavOpen.value) return
 
   gsap.to(navbarRef.value, {
-    y: '100vh',
+    y: '50vh',
     ease: 'ease.in',
     duration: 1,
   })
 
   gsap.to(openBtn.value, {
     y: 0,
-    duration: 0.8,
-    delay: 0.3,
+    duration: 0.6,
+    delay: routeChanged ? 3 : 0.5,
+    onComplete: () => {
+      isNavOpen.value = false
+    },
   })
-
-  isNavOpen.value = false
 }
 
 watch(route, () => {
-  closeNavbar()
+  if (screenIs('md')) {
+    /* DESKTOP ANIMATION */
+    gsap.to('nav', { y: 0, delay: 3, duration: 1, ease: 'ease.out' })
+    gsap.to('nav', { y: '100%', duration: 1, ease: 'ease.in' })
+  } else {
+    /* MOBILE ANIMATION */
+    gsap.to(openBtn.value, {
+      y: '100%',
+      duration: 0.4,
+      delay: 0.5,
+    })
+    closeNavbar(true)
+  }
+})
+
+onMounted(() => {
+  gsap.to('nav', { y: 0, delay: 3, duration: 1, ease: 'ease.out' })
+  gsap.to('nav', { y: '100%', duration: 1, ease: 'ease.in' })
 })
 </script>
 

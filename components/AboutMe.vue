@@ -4,7 +4,7 @@
 
     <div
       ref="aboutRef"
-      class="px-6 py-4 md:mx-auto ml-4 max-w-2xl text-white border-2 border-blue-700 border-solid rounded-sm opacity-0"
+      class="px-6 py-4 md:mx-auto ml-4 max-w-2xl text-white border-2 border-white border-solid rounded-lg bg-[#ffffff11]"
     >
       <div
         v-for="row in aboutme"
