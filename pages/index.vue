@@ -40,7 +40,7 @@
       <div class="flex justify-end mt-12">
         <a
           id="download-btn"
-          href="https://drive.google.com/file/d/1J-aLetwdiJEEopSv2rVqddBlsvP2FhQa/view?usp=share_link"
+          href="https://drive.google.com/file/d/1fJ3j3l1E6LGUjeXgUS4wURVWV86teSn4/view?usp=share_link"
           download="amit-resume.pdf"
           class="mt-2 py-3 px-6 md:px-8 uppercase text-center relative"
           aria-label="download amit's resume"

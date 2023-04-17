@@ -12,6 +12,9 @@
 <script lang="ts" setup>
 import '@/assets/css/main.css'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+
+gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
   gsap.fromTo('main', { opacity: 0 }, { opacity: 1, delay: 3, duration: 1 })

@@ -6,27 +6,58 @@
       <li
         v-for="d in data"
         :key="d.time"
-        class="bg-[#ffffff11] text-white p-4 rounded-md mb-10 flex flex-col relative before:absolute before:top-2 before:w-4 before:h-4 before:rounded-full before:left-[-35px] before:bg-white"
+        class="mb-10 relative before:absolute before:top-2 before:w-4 before:h-4 before:rounded-full before:left-[-35px] before:bg-white"
       >
-        <div class="arrow" aria-hidden></div>
-        <time class="text-sm font-exo leading-none">{{ d.time }}</time>
-        <p class="my-2 text-sm text-[#aaa6c3]">
-          <strong class="font-bold">{{ d.title }}</strong>
-        </p>
-        <p class="text-base font-exo">
-          {{ d.place }}
-        </p>
+        <div
+          class="content relative bg-[#ffffff11] text-white rounded-md p-4 flex flex-col"
+        >
+          <div class="arrow" aria-hidden></div>
+          <time class="text-sm font-exo leading-none">{{ d.time }}</time>
+          <p class="my-2 text-sm text-[#aaa6c3]">
+            <strong class="font-bold">{{ d.title }}</strong>
+          </p>
+          <p class="text-base font-exo">
+            {{ d.place }}
+          </p>
+        </div>
       </li>
     </ol>
   </div>
 </template>
 
 <script setup>
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+
 defineProps({
   data: {
     type: Array,
     required: true,
   },
+})
+
+onMounted(() => {
+  setTimeout(() => {
+    ScrollTrigger.batch('ol li .content', {
+      onEnter: (batch) => {
+        batch.forEach((ele, index) =>
+          gsap.fromTo(
+            ele,
+            { x: '100vw' },
+            {
+              scrollTrigger: ele,
+              x: 0,
+              stagger: 0.2,
+              duration: 2,
+              ease: 'expo',
+              delay: index * 0.2,
+            }
+          )
+        )
+      },
+      once: true,
+    })
+  }, 3000)
 })
 </script>
 

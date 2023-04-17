@@ -27,10 +27,15 @@ import { aboutme } from '~~/store/about'
 const aboutRef = ref()
 
 onMounted(() => {
-  gsap.to(aboutRef.value, {
-    opacity: 1,
-    duration: 2,
-    ease: 'sine.out',
-  })
+  gsap.fromTo(
+    aboutRef.value,
+    { xPercent: 0 },
+    {
+      opacity: 1,
+      duration: 2,
+      ease: 'sine.out',
+      delay: 3,
+    }
+  )
 })
 </script>

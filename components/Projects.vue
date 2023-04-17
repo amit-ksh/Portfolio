@@ -6,8 +6,8 @@
       <div
         v-for="project in projects"
         :id="project.title"
-        ref="projectRef"
         :key="project.title"
+        ref="projectRef"
         class="w-full sm:w-1/2 md:w-1/2 xl:w-1/3 sm:p-4 py-4"
         style="transform: translateX(-100vw)"
       >
@@ -25,18 +25,33 @@
 
 <script setup>
 import gsap from 'gsap'
-import { projects } from '~~/store/projects'
+import { ScrollTrigger } from 'gsap/all'
+
+import { projects } from '~/store/projects'
 
 const projectRef = ref()
 
 onMounted(() => {
-  gsap.to(projectRef.value, {
-    opacity: 1,
-    x: 0,
-    duration: 2,
-    stagger: 0.1,
-    ease: 'expo',
-    delay: 3,
-  })
+  setTimeout(() => {
+    ScrollTrigger.batch(projectRef.value, {
+      onEnter: (batch) => {
+        batch.forEach((project, index) =>
+          gsap.fromTo(
+            project,
+            { x: '-100vw' },
+            {
+              scrollTrigger: project.value,
+              x: 0,
+              stagger: 0.2,
+              duration: 2,
+              ease: 'expo',
+              delay: index * 0.2,
+            }
+          )
+        )
+      },
+      once: true,
+    })
+  }, 3000)
 })
 </script>

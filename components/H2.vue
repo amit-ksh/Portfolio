@@ -14,12 +14,14 @@ import gsap from 'gsap'
 const titleRef = ref(null)
 
 onMounted(() => {
-  gsap.to(titleRef.value, {
-    opacity: 1,
-    y: 0,
-    duration: 1.5,
-    ease: 'expo',
-    delay: 3,
+  setTimeout(() => {
+    gsap.to(titleRef.value, {
+      scrollTrigger: titleRef.value,
+      opacity: 1,
+      y: 0,
+      duration: 1.5,
+      ease: 'expo',
+    })
   })
 })
 </script>
