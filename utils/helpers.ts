@@ -1,5 +1,7 @@
 import { logoToNameMap } from '~/store/skills'
-import tailwind from 'tailwind.config'
+import resolveConfig from 'tailwindcss/resolveConfig'
+
+import tailwindConfig from '../tailwind.config.js'
 
 /**
  * Returns the difference between the given date and current date.
@@ -77,9 +79,6 @@ export const enableScroll = () => {
   document.querySelector('body')!.style.overflow = 'visible'
 }
 
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../tailwind.config.js'
-
 /**
  *
  * Find out if a tailwind screen value matches the current window
@@ -115,6 +114,8 @@ export const screenIs = (screen = '') => {
   }
 
   // invalid screen choice
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   if (!screens[screen]) {
     console.error(`No match for "${screen}"`)
 

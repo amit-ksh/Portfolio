@@ -11,17 +11,17 @@
 <script setup>
 const education = [
   {
-    time: '15 Septmber 2022',
+    time: 'Septmber 2022',
     title: 'B.Sc. in Computer Application and Cyber Security',
     place: '🏫 Jharkhand Raksha Shakti University, Ranchi',
   },
   {
-    time: '14 May 2019',
+    time: 'May 2019',
     title: '12th/High School',
     place: "🏫 St. John's Inter College, Ranchi",
   },
   {
-    time: '06 June 2017',
+    time: 'June 2017',
     title: '10th/GED',
     place: '🏫 Central Academy, Ranchi',
   },

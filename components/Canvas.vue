@@ -97,7 +97,6 @@ const travel = () => {
       gsap.to(app, {
         opacity: 1,
         duration: 1,
-        onComplete: () => {},
       })
       animating.value = false
     },

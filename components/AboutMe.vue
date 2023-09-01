@@ -9,7 +9,7 @@
       <div
         v-for="row in aboutme"
         :key="row.attr"
-        class="text-xl font-mono mb-2"
+        class="info text-xl font-mono mb-2"
       >
         <h2 class="font-bold text-xl md:text-2xl tracking-wide text-justify">
           {{ row.name }}
@@ -29,12 +29,25 @@ const aboutRef = ref()
 onMounted(() => {
   gsap.fromTo(
     aboutRef.value,
-    { xPercent: 0 },
+    { scaleY: 0 },
     {
-      opacity: 1,
-      duration: 2,
+      scaleY: 1,
+      duration: 1,
       ease: 'sine.out',
       delay: 3,
+    }
+  )
+
+  gsap.fromTo(
+    '.info',
+    {
+      opacity: 0,
+    },
+    {
+      opacity: 1,
+      duration: 1,
+      stagger: 0.5,
+      delay: 4.5,
     }
   )
 })

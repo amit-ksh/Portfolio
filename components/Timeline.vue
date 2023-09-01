@@ -40,17 +40,18 @@ onMounted(() => {
   setTimeout(() => {
     ScrollTrigger.batch('ol li .content', {
       onEnter: (batch) => {
-        batch.forEach((ele, index) =>
+        batch.forEach((ele) =>
           gsap.fromTo(
             ele,
             { x: '100vw' },
             {
-              scrollTrigger: ele,
+              scrollTrigger: {
+                trigger: ele,
+                start: 'top 65%',
+              },
               x: 0,
-              stagger: 0.2,
               duration: 2,
               ease: 'expo',
-              delay: index * 0.2,
             }
           )
         )
@@ -71,5 +72,9 @@ onMounted(() => {
   width: 0;
   border: 7px solid transparent;
   border-right: 7px solid #ffffff11;
+}
+
+.content {
+  transform: translateX(100vw);
 }
 </style>

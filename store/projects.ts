@@ -17,6 +17,7 @@ export const projects: Array<{
       'nextjs',
       'typescript',
       'chakraui',
+      'meilisearch',
       'prisma',
       'mongodb',
       'vercel',
@@ -67,7 +68,7 @@ export const projects: Array<{
   },
   {
     image: '/svg/projects/gnb.svg',
-    title: 'GnB Distribution Analyzer',
+    title: 'Gaussian & Binomial Distribution Analyzer',
     description:
       'A python package that helps to analyze the Gaussian and Binomial Distributions',
     techStack: ['python', 'numpy', 'matplotlib', 'pypi'],

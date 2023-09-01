@@ -26,6 +26,7 @@ module.exports = {
   rules: {
     'vue/script-setup-no-uses-vars': 'off',
     'vue/multi-word-component-names': 'off',
+    'vue/require-default-prop': 'off',
     'no-unused-expressions': 'off',
     'vue/no-v-html': 'off',
     'no-console': ['error', { allow: ['warn', 'error'] }],

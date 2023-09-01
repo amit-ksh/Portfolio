@@ -44,6 +44,7 @@ export const logoToNameMap: { [key: string]: string } = {
   mongodb: 'Mongo DB',
   gsap: 'GSAP',
   flask: 'Flask',
+  meilisearch: 'MeiliSearch',
   // ML
   numpy: 'numpy',
   pandas: 'pandas',
