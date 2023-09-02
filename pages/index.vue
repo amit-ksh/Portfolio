@@ -34,7 +34,7 @@
             </h2>
           </section>
         </div>
-        <p>I'm a <strong>Fullstack Developer</strong> from <b>India.</b></p>
+        <p>I'm a <strong>Software Developer</strong> from <b>India.</b></p>
       </div>
 
       <div class="flex justify-end mt-12">
@@ -56,7 +56,11 @@
 <script setup>
 import gsap from 'gsap'
 
-const roles = ['Web Developer', 'Open Source Contributor', 'AI & ML Enthusiast']
+const roles = [
+  'Software Developer',
+  'Open Source Contributor',
+  'AI & ML Enthusiast',
+]
 
 const containerRef = ref()
 const socialsRef = ref()
@@ -79,6 +83,10 @@ onMounted(() => {
 
 definePageMeta({
   layout: 'default',
+})
+
+useHead({
+  title: 'Amit Sharma',
 })
 </script>
 

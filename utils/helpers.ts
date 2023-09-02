@@ -66,7 +66,7 @@ export const logoToName = (logo: string) => logoToNameMap[logo] || ''
 export const disableScroll = () => {
   if (!document) return
 
-  document.querySelector('body')!.style.overflow = 'hidden'
+  document.body.style.overflow = 'hidden'
 }
 
 /**
@@ -76,7 +76,7 @@ export const disableScroll = () => {
 export const enableScroll = () => {
   if (!document) return
 
-  document.querySelector('body')!.style.overflow = 'visible'
+  document.body.style.overflow = 'visible'
 }
 
 /**

@@ -14,4 +14,8 @@
 definePageMeta({
   layout: 'with-header',
 })
+
+useHead({
+  title: 'About | Amit Sharma',
+})
 </script>

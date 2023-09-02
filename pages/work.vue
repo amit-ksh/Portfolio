@@ -10,4 +10,8 @@
 definePageMeta({
   layout: 'with-header',
 })
+
+useHead({
+  title: 'Work | Amit Sharma',
+})
 </script>
