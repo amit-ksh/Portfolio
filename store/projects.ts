@@ -9,6 +9,56 @@ export const projects: Array<{
   }
 }> = [
   {
+    image: '/svg/projects/homie.svg',
+    title: 'Scones Unlimited',
+    description:
+      'Build an image classification model that can automatically detect which kind of vehicle delivery drivers have, in order to route them to the correct loading bay and orders which can help Scones Unlimited optimize their operations.',
+    techStack: [
+      'python',
+      'aws-sagemaker',
+      'aws-lambda',
+      'aws-step-functions',
+      'aws-s3',
+      'numpy',
+      'matplotlib',
+      'pandas',
+    ],
+    url: {
+      github:
+        'https://github.com/amit-ksh/ML-Workflow-for-Scones-Unlimited-on-Sagemaker',
+    },
+  },
+  {
+    image: '/svg/projects/homie.svg',
+    title: 'Landmark Classification & Tagging for Social Media',
+    description:
+      'Build an image classification model that predicts the location of the images based on landmarks depicted in the image.',
+    techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
+    url: {
+      github: 'https://github.com/amit-ksh/landmark-classification/',
+    },
+  },
+  {
+    image: '/svg/projects/homie.svg',
+    title: 'Handwritten Digits Classification',
+    description:
+      'Build an image classification model using MNIST dataset that classify the handwritten digits.',
+    techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
+    url: {
+      github: 'https://github.com/amit-ksh/handwritten-digits-classifier/',
+    },
+  },
+  {
+    image: '/svg/projects/homie.svg',
+    title: 'Bike Sharing Demand Predictor',
+    description:
+      'Build an ML model using AutoGluon that predicts the bike sharing demand.',
+    techStack: ['python', 'autogluon', 'pandas', 'kaggle'],
+    url: {
+      github: 'https://github.com/amit-ksh/bike-sharing-demand/',
+    },
+  },
+  {
     image: '/svg/projects/chorus.svg',
     title: 'Chorus',
     description:

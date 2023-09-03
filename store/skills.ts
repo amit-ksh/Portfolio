@@ -12,7 +12,7 @@ export const web: string[] = [
   'express',
   'prisma',
   'postgres',
-]
+] as const
 
 export const ml: string[] = [
   'numpy',
@@ -20,7 +20,7 @@ export const ml: string[] = [
   'matplotlib',
   'scikit-learn',
   'pytorch',
-]
+] as const
 
 export const logoToNameMap: { [key: string]: string } = {
   // Languages
@@ -51,8 +51,15 @@ export const logoToNameMap: { [key: string]: string } = {
   matplotlib: 'matplotlib',
   'scikit-learn': 'scikit learn',
   pytorch: 'PyTorch',
+  'aws-sagemaker': 'AWS Sagemaker',
+  autogluon: 'Autogluon',
   // Hosting
   vercel: 'Vercel',
   netlify: 'netlify',
   pypi: 'PyPi',
-}
+  kaggle: 'Kaggle',
+  // Cloud
+  'aws-lambda': 'AWS Lambda',
+  'aws-s3': 'AWS S3',
+  'aws-step-functions': 'AWS Step Functions',
+} as const

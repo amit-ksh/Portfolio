@@ -24,7 +24,7 @@
             v-for="tech in techStack"
             :key="tech"
             :logo="tech"
-            :name="logoToName(tech)"
+            :name="logoToName(tech) || tech"
             class="w-8 h-8"
           />
         </div>
