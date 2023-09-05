@@ -128,5 +128,5 @@ export const projects: Array<{
         'https://github.com/amit-ksh/Udacity-AI-Programming-with-Python/tree/main/mini-projects/GnB_Distribution',
       website: 'https://pypi.org/project/gnb-distributions-analyzer/',
     },
-  },  
+  },
 ]
