@@ -9,16 +9,17 @@ export const projects: Array<{
   }
 }> = [
   {
-    image: '/svg/projects/homie.svg',
+    image: '/svg/projects/scones-unlimited.svg',
     title: 'Scones Unlimited',
     description:
-      'Build an image classification model that can automatically detect which kind of vehicle delivery drivers have, in order to route them to the correct loading bay and orders which can help Scones Unlimited optimize their operations.',
+      'Build an image classification model that can automatically detect which kind of vehicle delivery drivers have.',
     techStack: [
       'python',
       'aws-sagemaker',
       'aws-lambda',
       'aws-step-functions',
       'aws-s3',
+      'aws-sns',
       'numpy',
       'matplotlib',
       'pandas',
@@ -29,52 +30,13 @@ export const projects: Array<{
     },
   },
   {
-    image: '/svg/projects/homie.svg',
+    image: '/svg/projects/landmark-classification.svg',
     title: 'Landmark Classification & Tagging for Social Media',
     description:
       'Build an image classification model that predicts the location of the images based on landmarks depicted in the image.',
     techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
     url: {
       github: 'https://github.com/amit-ksh/landmark-classification/',
-    },
-  },
-  {
-    image: '/svg/projects/homie.svg',
-    title: 'Handwritten Digits Classification',
-    description:
-      'Build an image classification model using MNIST dataset that classify the handwritten digits.',
-    techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
-    url: {
-      github: 'https://github.com/amit-ksh/handwritten-digits-classifier/',
-    },
-  },
-  {
-    image: '/svg/projects/homie.svg',
-    title: 'Bike Sharing Demand Predictor',
-    description:
-      'Build an ML model using AutoGluon that predicts the bike sharing demand.',
-    techStack: ['python', 'autogluon', 'pandas', 'kaggle'],
-    url: {
-      github: 'https://github.com/amit-ksh/bike-sharing-demand/',
-    },
-  },
-  {
-    image: '/svg/projects/chorus.svg',
-    title: 'Chorus',
-    description:
-      'Chorus is a Spotify clone built using Next.js, ChakraUI and MongoDB.',
-    techStack: [
-      'nextjs',
-      'typescript',
-      'chakraui',
-      'meilisearch',
-      'prisma',
-      'mongodb',
-      'vercel',
-    ],
-    url: {
-      github: 'https://github.com/amit-ksh/chorus',
-      website: 'https://chours.vercel.app/',
     },
   },
   {
@@ -106,6 +68,45 @@ export const projects: Array<{
     },
   },
   {
+    image: '/svg/projects/handwritten-digits.svg',
+    title: 'Handwritten Digits Classification',
+    description:
+      'Build an image classification model using MNIST dataset that classify the handwritten digits.',
+    techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
+    url: {
+      github: 'https://github.com/amit-ksh/handwritten-digits-classifier/',
+    },
+  },
+  {
+    image: '/svg/projects/bike-sharing-demand.svg',
+    title: 'Bike Sharing Demand',
+    description:
+      'Build an ML model using AutoGluon that predicts the bike sharing demand.',
+    techStack: ['python', 'autogluon', 'pandas', 'kaggle'],
+    url: {
+      github: 'https://github.com/amit-ksh/bike-sharing-demand/',
+    },
+  },
+  {
+    image: '/svg/projects/chorus.svg',
+    title: 'Chorus',
+    description:
+      'Chorus is a Spotify clone built using Next.js, ChakraUI and MongoDB.',
+    techStack: [
+      'nextjs',
+      'typescript',
+      'chakraui',
+      'meilisearch',
+      'prisma',
+      'mongodb',
+      'vercel',
+    ],
+    url: {
+      github: 'https://github.com/amit-ksh/chorus',
+      website: 'https://chours.vercel.app/',
+    },
+  },
+  {
     image: '/svg/projects/weatherapp.svg',
     title: 'the.weather',
     description:
@@ -127,26 +128,5 @@ export const projects: Array<{
         'https://github.com/amit-ksh/Udacity-AI-Programming-with-Python/tree/main/mini-projects/GnB_Distribution',
       website: 'https://pypi.org/project/gnb-distributions-analyzer/',
     },
-  },
-  {
-    image: '/svg/projects/homie.svg',
-    title: 'homie',
-    description:
-      'A web app which uses the ML model to predicts the price of apartments situated in USA.',
-    techStack: ['python', 'flask', 'scikit-learn', 'numpy', 'pandas'],
-    url: {
-      github: 'https://github.com/amit-ksh/homie/',
-      website: 'https://homie.amit-ksh.repl.co',
-    },
-  },
-  {
-    image: '/svg/projects/portfolio.svg',
-    title: 'Portfolio',
-    description: 'Personal site showcasing my projects and online resume.',
-    techStack: ['nuxt', 'tailwindcss', 'threejs', 'gsap', 'netlify'],
-    url: {
-      github: 'https://github.com/amit-ksh/Portfolio/',
-      website: 'https://amit-ksh.netlify.app/',
-    },
-  },
+  },  
 ]

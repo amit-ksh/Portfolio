@@ -5,7 +5,7 @@
   >
     <div class="relative pb-48 overflow-hidden border-4 rounded-lg shadow-lg">
       <img
-        class="absolute inset-0 h-full w-full object-cover bg-black"
+        class="absolute inset-0 h-full w-full object-cover bg-black px-4"
         :src="imageUrl"
         :alt="title"
       />

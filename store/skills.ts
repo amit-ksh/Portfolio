@@ -62,4 +62,5 @@ export const logoToNameMap: { [key: string]: string } = {
   'aws-lambda': 'AWS Lambda',
   'aws-s3': 'AWS S3',
   'aws-step-functions': 'AWS Step Functions',
+  'aws-sns': 'AWS SNS',
 } as const
