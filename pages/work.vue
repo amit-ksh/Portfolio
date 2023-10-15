@@ -6,12 +6,12 @@
   </div>
 </template>
 
-<script>
+<script setup>
 definePageMeta({
   layout: 'with-header',
 })
 
 useHead({
-  title: 'Work | Amit Sharma',
+  title: 'Work',
 })
 </script>
