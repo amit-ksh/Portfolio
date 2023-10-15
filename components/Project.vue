@@ -11,14 +11,17 @@
       />
     </div>
     <div class="p-4">
-      <h2 class="text-xl mt-2 font-bold">{{ title }}</h2>
-      <span
-        v-for="tag in tags"
-        :key="tag"
-        class="text-xs p-1 rounded-md text-white"
-        :class="tag === 'ai-ml' ? 'bg-blue-400' : 'bg-green-400'"
-        >#{{ tag }}</span
-      >
+      <h2 class="mt-2">
+        <span class="text-xl font-bold">{{ title }}</span>
+
+        <span
+          v-for="tag in tags"
+          :key="tag"
+          class="text-xs p-1 rounded-md text-white ml-2 whitespace-nowrap"
+          :class="tag === 'ai-ml' ? 'bg-blue-400 ai-ml' : 'bg-green-400 web'"
+          >#{{ tag }}</span
+        >
+      </h2>
       <p class="mt-2 text-sm font-mono text-justify">{{ description }}</p>
     </div>
     <div class="mt-auto">
@@ -104,3 +107,17 @@ defineProps({
   },
 })
 </script>
+
+<style scoped>
+.web {
+  -webkit-box-shadow: 0px 0px 25px 3px rgba(74, 222, 128, 0.9);
+  -moz-box-shadow: 0px 0px 25px 3px rgba(74, 222, 128, 0.9);
+  box-shadow: 0px 0px 25px 3px rgba(74, 222, 128, 0.9);
+}
+
+.ai-ml {
+  -webkit-box-shadow: 0px 0px 25px 3px rgba(96, 165, 250, 0.9);
+  -moz-box-shadow: 0px 0px 25px 3px rgba(96, 165, 250, 0.9);
+  box-shadow: 0px 0px 25px 3px rgba(96, 165, 250, 0.9);
+}
+</style>
