@@ -1,7 +1,7 @@
 import { logoToNameMap } from '~/store/skills'
 import resolveConfig from 'tailwindcss/resolveConfig'
 
-import tailwindConfig from '../tailwind.config.js'
+import tailwindConfig from '../tailwind.config.ts'
 
 /**
  * Returns the difference between the given date and current date.

@@ -17,6 +17,7 @@
           :tech-stack="project.techStack"
           :image-url="project.image"
           :url="project.url"
+          :tags="project.tags"
         />
       </div>
     </div>

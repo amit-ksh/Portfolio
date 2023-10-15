@@ -11,8 +11,15 @@
       />
     </div>
     <div class="p-4">
-      <h2 class="text-xl mt-2 mb-2 font-bold">{{ title }}</h2>
-      <p class="text-sm font-mono text-justify">{{ description }}</p>
+      <h2 class="text-xl mt-2 font-bold">{{ title }}</h2>
+      <span
+        v-for="tag in tags"
+        :key="tag"
+        class="text-xs p-1 rounded-md text-white"
+        :class="tag === 'ai-ml' ? 'bg-blue-400' : 'bg-green-400'"
+        >#{{ tag }}</span
+      >
+      <p class="mt-2 text-sm font-mono text-justify">{{ description }}</p>
     </div>
     <div class="mt-auto">
       <!-- TECH STACK -->
@@ -89,6 +96,10 @@ defineProps({
   },
   url: {
     type: Object,
+    required: true,
+  },
+  tags: {
+    type: Array,
     required: true,
   },
 })

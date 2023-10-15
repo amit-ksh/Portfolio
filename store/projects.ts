@@ -3,6 +3,7 @@ export const projects: Array<{
   title: string
   description: string
   techStack: string[]
+  tags: string[]
   url: {
     github?: string
     website?: string
@@ -24,6 +25,7 @@ export const projects: Array<{
       'matplotlib',
       'pandas',
     ],
+    tags: ['ai-ml'],
     url: {
       github:
         'https://github.com/amit-ksh/ML-Workflow-for-Scones-Unlimited-on-Sagemaker',
@@ -35,6 +37,7 @@ export const projects: Array<{
     description:
       'Build an image classification model that predicts the location of the images based on landmarks depicted in the image.',
     techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
+    tags: ['ai-ml'],
     url: {
       github: 'https://github.com/amit-ksh/landmark-classification/',
     },
@@ -52,6 +55,7 @@ export const projects: Array<{
       'postgres',
       'vercel',
     ],
+    tags: ['web'],
     url: {
       github: 'https://github.com/amit-ksh/locknest',
       website: 'https://locknest.vercel.app/',
@@ -63,18 +67,9 @@ export const projects: Array<{
     description:
       "A CLI application that trains the pretrained Neural Netwrok and uses that for predicting the flower's name",
     techStack: ['python', 'pytorch', 'numpy'],
+    tags: ['ai-ml'],
     url: {
       github: 'https://github.com/amit-ksh/Flower-Classifier',
-    },
-  },
-  {
-    image: '/svg/projects/handwritten-digits.svg',
-    title: 'Handwritten Digits Classification',
-    description:
-      'Build an image classification model using MNIST dataset that classify the handwritten digits.',
-    techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
-    url: {
-      github: 'https://github.com/amit-ksh/handwritten-digits-classifier/',
     },
   },
   {
@@ -83,6 +78,7 @@ export const projects: Array<{
     description:
       'Build an ML model using AutoGluon that predicts the bike sharing demand.',
     techStack: ['python', 'autogluon', 'pandas', 'kaggle'],
+    tags: ['ai-ml'],
     url: {
       github: 'https://github.com/amit-ksh/bike-sharing-demand/',
     },
@@ -101,6 +97,7 @@ export const projects: Array<{
       'mongodb',
       'vercel',
     ],
+    tags: ['web'],
     url: {
       github: 'https://github.com/amit-ksh/chorus',
       website: 'https://chours.vercel.app/',
@@ -112,6 +109,7 @@ export const projects: Array<{
     description:
       'Weather App is a React web app that shows the weather details from all around the world.',
     techStack: ['react', 'node', 'chakraui', 'netlify'],
+    tags: ['web'],
     url: {
       github: 'https://github.com/amit-ksh/weather-app',
       website: 'https://your-weatherman.netlify.app/',
@@ -123,10 +121,22 @@ export const projects: Array<{
     description:
       'A python package that helps to analyze the Gaussian and Binomial Distributions',
     techStack: ['python', 'numpy', 'matplotlib', 'pypi'],
+    tags: ['ai-ml'],
     url: {
       github:
         'https://github.com/amit-ksh/Udacity-AI-Programming-with-Python/tree/main/mini-projects/GnB_Distribution',
       website: 'https://pypi.org/project/gnb-distributions-analyzer/',
+    },
+  },
+  {
+    image: '/svg/projects/handwritten-digits.svg',
+    title: 'Handwritten Digits Classification',
+    description:
+      'Build an image classification model using MNIST dataset that classify the handwritten digits.',
+    techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
+    tags: ['ai-ml'],
+    url: {
+      github: 'https://github.com/amit-ksh/handwritten-digits-classifier/',
     },
   },
 ]
