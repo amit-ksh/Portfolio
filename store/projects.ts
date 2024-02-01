@@ -1,4 +1,4 @@
-export const projects: Array<{
+export interface Project {
   image: string
   title: string
   description: string
@@ -8,12 +8,14 @@ export const projects: Array<{
     github?: string
     website?: string
   }
-}> = [
+}
+
+export const ml: Project[] = [
   {
     image: '/svg/projects/scones-unlimited.svg',
     title: 'Scones Unlimited',
     description:
-      'Build an image classification model that can automatically detect which kind of vehicle delivery drivers have.',
+      'An image classification model that can automatically detect which kind of vehicle delivery drivers have.',
     techStack: [
       'python',
       'aws-sagemaker',
@@ -35,11 +37,93 @@ export const projects: Array<{
     image: '/svg/projects/landmark-classification.svg',
     title: 'Landmark Classification & Tagging for Social Media',
     description:
-      'Build an image classification model that predicts the location of the images based on landmarks depicted in the image.',
+      'An image classification model that predicts the location of the images based on landmarks depicted in the image.',
     techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
     tags: ['ai-ml'],
     url: {
       github: 'https://github.com/amit-ksh/landmark-classification/',
+    },
+  },
+  {
+    image: '/svg/projects/flower-classifier.svg',
+    title: 'Flower Classifier',
+    description:
+      "A CLI application that trains the pretrained Neural Netwrok and uses that for predicting the flower's name",
+    techStack: ['python', 'pytorch', 'numpy'],
+    tags: ['ai-ml'],
+    url: {
+      github: 'https://github.com/amit-ksh/Flower-Classifier',
+    },
+  },
+  {
+    image: '/svg/projects/bike-sharing-demand.svg',
+    title: 'Bike Sharing Demand',
+    description:
+      'ML model built using AutoGluon that predicts the bike sharing demand.',
+    techStack: ['python', 'autogluon', 'pandas', 'kaggle'],
+    tags: ['ai-ml'],
+    url: {
+      github: 'https://github.com/amit-ksh/bike-sharing-demand/',
+    },
+  },
+  {
+    image: '/svg/projects/gnb.svg',
+    title: 'Gaussian & Binomial Distribution Analyzer',
+    description:
+      'A python package that helps to analyze the Gaussian and Binomial Distributions',
+    techStack: ['python', 'numpy', 'matplotlib', 'pypi'],
+    tags: ['ai-ml'],
+    url: {
+      github:
+        'https://github.com/amit-ksh/Udacity-AI-Programming-with-Python/tree/main/mini-projects/GnB_Distribution',
+      website: 'https://pypi.org/project/gnb-distributions-analyzer/',
+    },
+  },
+  // {
+  //   image: '/svg/projects/handwritten-digits.svg',
+  //   title: 'Handwritten Digits Classification',
+  //   description:
+  //     'Image classification model using MNIST dataset that classify the handwritten digits.',
+  //   techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
+  //   tags: ['ai-ml'],
+  //   url: {
+  //     github: 'https://github.com/amit-ksh/handwritten-digits-classifier/',
+  //   },
+  // },
+]
+
+export const web: Project[] = [
+  {
+    image: '/svg/projects/locknest.svg',
+    title: 'Mylo',
+    description:
+      'Mylo is an AI-powered web application that provides newsletter service to individuals and businesses to start their newsletter for their users or customers.',
+    techStack: [
+      'nextjs',
+      'nylas',
+      'azure-translate',
+      'shadcn-ui',
+      'tailwindcss',
+      'tRPC',
+      'typescript',
+      'postgres',
+    ],
+    tags: ['web', 'ai-ml'],
+    url: {
+      github: 'https://github.com/amit-ksh/mylo',
+    },
+  },
+  {
+    image: '/svg/projects/locknest.svg',
+    title: 'Endless EcoQuest',
+    description:
+      'Endless EcoQuest is an immersive endless racing experience built using Three.js and Socket.io.',
+    techStack: ['js', 'threejs', 'socketio'],
+    tags: ['web'],
+    url: {
+      github: 'https://github.com/amit-ksh/endless-ecoQuest',
+      website:
+        'https://endlessecoquest-lny2--3000--6854296d.local-credentialless.webcontainer.io/',
     },
   },
   {
@@ -62,48 +146,6 @@ export const projects: Array<{
     },
   },
   {
-    image: '/svg/projects/flower-classifier.svg',
-    title: 'Flower Classifier',
-    description:
-      "A CLI application that trains the pretrained Neural Netwrok and uses that for predicting the flower's name",
-    techStack: ['python', 'pytorch', 'numpy'],
-    tags: ['ai-ml'],
-    url: {
-      github: 'https://github.com/amit-ksh/Flower-Classifier',
-    },
-  },
-  {
-    image: '/svg/projects/bike-sharing-demand.svg',
-    title: 'Bike Sharing Demand',
-    description:
-      'Build an ML model using AutoGluon that predicts the bike sharing demand.',
-    techStack: ['python', 'autogluon', 'pandas', 'kaggle'],
-    tags: ['ai-ml'],
-    url: {
-      github: 'https://github.com/amit-ksh/bike-sharing-demand/',
-    },
-  },
-  {
-    image: '/svg/projects/chorus.svg',
-    title: 'Chorus',
-    description:
-      'Chorus is a Spotify clone built using Next.js, ChakraUI and MongoDB.',
-    techStack: [
-      'nextjs',
-      'typescript',
-      'chakraui',
-      'meilisearch',
-      'prisma',
-      'mongodb',
-      'vercel',
-    ],
-    tags: ['web'],
-    url: {
-      github: 'https://github.com/amit-ksh/chorus',
-      website: 'https://chours.vercel.app/',
-    },
-  },
-  {
     image: '/svg/projects/weatherapp.svg',
     title: 'the.weather',
     description:
@@ -113,30 +155,6 @@ export const projects: Array<{
     url: {
       github: 'https://github.com/amit-ksh/weather-app',
       website: 'https://your-weatherman.netlify.app/',
-    },
-  },
-  {
-    image: '/svg/projects/gnb.svg',
-    title: 'Gaussian & Binomial Distribution Analyzer',
-    description:
-      'A python package that helps to analyze the Gaussian and Binomial Distributions',
-    techStack: ['python', 'numpy', 'matplotlib', 'pypi'],
-    tags: ['ai-ml'],
-    url: {
-      github:
-        'https://github.com/amit-ksh/Udacity-AI-Programming-with-Python/tree/main/mini-projects/GnB_Distribution',
-      website: 'https://pypi.org/project/gnb-distributions-analyzer/',
-    },
-  },
-  {
-    image: '/svg/projects/handwritten-digits.svg',
-    title: 'Handwritten Digits Classification',
-    description:
-      'Build an image classification model using MNIST dataset that classify the handwritten digits.',
-    techStack: ['python', 'pytorch', 'numpy', 'matplotlib'],
-    tags: ['ai-ml'],
-    url: {
-      github: 'https://github.com/amit-ksh/handwritten-digits-classifier/',
     },
   },
 ]

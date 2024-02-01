@@ -1,8 +1,12 @@
 <template>
-  <div id="projects">
-    <H2>Projects</H2>
-
-    <div class="flex flex-wrap sm:mx-4 ml-2">
+  <div class="sm:mx-4 ml-2">
+    <h3
+      class="capitalize text-3xl text-center font-medium sm:mx-4 px-2 border-current border-y-2"
+      :class="`text-[${color}]`"
+    >
+      {{ title }}
+    </h3>
+    <div class="flex flex-wrap">
       <div
         v-for="project in projects"
         :id="project.title"
@@ -24,16 +28,23 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import gsap from 'gsap'
+import TailwindColors from 'tailwindcss/colors'
 
-import { projects } from '~/store/projects'
+import { type Project } from '~/store/projects'
+
+defineProps<{
+  projects: Project[]
+  title: string
+  color: typeof TailwindColors
+}>()
 
 const projectsRef = ref()
 
 onMounted(() => {
   setTimeout(() => {
-    projectsRef.value.forEach((project) =>
+    projectsRef.value.forEach((project: HTMLElement) =>
       gsap.fromTo(
         project,
         { y: '2vw' },

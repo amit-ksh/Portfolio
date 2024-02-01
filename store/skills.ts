@@ -37,6 +37,7 @@ export const logoToNameMap: { [key: string]: string } = {
   threejs: 'three.js',
   chakraui: 'ChakraUI',
   tailwindcss: 'TailwindCSS',
+  'shadcn-ui': 'shadcn/ui',
   node: 'Node.js',
   express: 'Express.js',
   prisma: 'Prisma',
@@ -45,6 +46,8 @@ export const logoToNameMap: { [key: string]: string } = {
   gsap: 'GSAP',
   flask: 'Flask',
   meilisearch: 'MeiliSearch',
+  socketio: 'Socket.io',
+  nylas: 'Nylas',
   // ML
   numpy: 'numpy',
   pandas: 'pandas',
@@ -63,4 +66,5 @@ export const logoToNameMap: { [key: string]: string } = {
   'aws-s3': 'AWS S3',
   'aws-step-functions': 'AWS Step Functions',
   'aws-sns': 'AWS SNS',
+  'azure-translate': 'Azure Translate',
 } as const
