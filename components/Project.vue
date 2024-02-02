@@ -39,7 +39,7 @@
 
       <!-- LINKS -->
       <div
-        class="flex flex-wrap flex-row py-4 px-2 border-t border-b text-xs text-gray-700"
+        class="flex flex-wrap flex-row py-4 px-2 border-t text-xs text-gray-700"
       >
         <!-- GITHUB LINK -->
         <a

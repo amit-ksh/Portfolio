@@ -122,8 +122,7 @@ export const web: Project[] = [
     tags: ['web'],
     url: {
       github: 'https://github.com/amit-ksh/endless-ecoQuest',
-      website:
-        'https://endlessecoquest-lny2--3000--6854296d.local-credentialless.webcontainer.io/',
+      website: 'https://stackblitz.com/~/github.com/amit-ksh/endless-ecoQuest/',
     },
   },
   {
