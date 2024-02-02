@@ -124,3 +124,18 @@ export const screenIs = (screen = '') => {
 
   return matches[screen]
 }
+
+/**
+ *
+ * Check whether the str is URL or not.
+ *
+ * @param {string} str
+ *
+ * @return {Boolean}
+ */
+export function isValidURL(str: string) {
+  const res = str.match(
+    /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
+  )
+  return res !== null
+}

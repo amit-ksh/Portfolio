@@ -34,19 +34,27 @@
             </h2>
           </section>
         </div>
-        <p>I'm a <strong>Software Developer</strong> from <b>India.</b></p>
+        <p><strong>Software Developer</strong> from <b>India.</b></p>
       </div>
 
-      <div class="flex justify-end mt-12">
+      <div class="flex justify-end gap-4 mt-12 font-medium">
         <a
-          id="download-btn"
-          href="https://drive.google.com/file/d/1ZUR7sLEwRqt87yeWY_sUd1i7JxSS1fcU/view?usp=sharing"
+          href="https://drive.google.com/file/d/10heju8Ft0PU8Q4tn48U2hxNuQbNjsOQH/view?usp=drive_link"
           download="amit-resume.pdf"
-          class="mt-2 py-3 px-6 md:px-8 uppercase text-center relative"
+          class="btn py-2 px-6 md:px-8 uppercase text-center relative"
           aria-label="download amit's resume"
           target="_blank"
         >
-          Checkout my Resume
+          Resume
+        </a>
+
+        <a
+          href="mailto:hey.amit.ksh@gmail.com"
+          class="btn py-2 px-6 md:px-8 uppercase text-center relative"
+          aria-label="amit's mail"
+          target="_blank"
+        >
+          Contact Me!
         </a>
       </div>
     </div>
@@ -141,18 +149,18 @@ h2:last-child div {
   }
 }
 
-#download-btn {
+.btn {
   color: #f4f4f4;
   border: 1px solid rgb(146, 148, 248);
   position: relative;
   overflow: hidden;
 }
 
-#download-btn:hover {
+.btn:hover {
   box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
 }
 
-#download-btn:before {
+.btn:before {
   content: '';
   position: absolute;
   top: 0;
@@ -168,7 +176,7 @@ h2:last-child div {
   transition: all 650ms;
 }
 
-#download-btn:hover:before {
+.btn:hover:before {
   left: 100%;
 }
 </style>

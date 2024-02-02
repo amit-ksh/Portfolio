@@ -16,8 +16,18 @@
           <p class="my-2 text-sm text-[#aaa6c3]">
             <strong class="font-bold">{{ d.title }}</strong>
           </p>
-          <p class="text-base font-exo">
-            {{ d.place }}
+          <p
+            v-for="(value, key) in d.details"
+            :key="key"
+            class="text-base font-exo break-words"
+          >
+            <span class="capitalize font-semibold">{{ key }}: </span>
+            <span v-if="!isValidURL(value)" class="font-medium">{{
+              value
+            }}</span>
+            <span v-else class="text-blue-400 font-medium"
+              ><a :href="value" :alt="`${key}'s link`">link</a></span
+            >
           </p>
         </div>
       </li>
@@ -25,16 +35,19 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 
-defineProps({
+import { isValidURL } from '@/utils/helpers'
+
+defineProps<{
   data: {
-    type: Array,
-    required: true,
-  },
-})
+    time: string
+    title: string
+    details: Record<string, string>
+  }[]
+}>()
 
 onMounted(() => {
   setTimeout(() => {
