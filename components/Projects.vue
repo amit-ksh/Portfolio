@@ -2,7 +2,7 @@
   <div class="sm:mx-4 ml-2">
     <h3
       class="capitalize text-3xl text-center font-medium sm:mx-4 px-2 border-current border-y-2"
-      :class="`text-[${color}]`"
+      :class="`text-${color}-400`"
     >
       {{ title }}
     </h3>
@@ -29,15 +29,19 @@
 </template>
 
 <script setup lang="ts">
+/**
+ * DON'T REMOVE BELOW CLASSES:
+ * Tailwind classes will not load if we remove below classes
+ * text-green-400 text-blue-400
+ */
 import gsap from 'gsap'
-import TailwindColors from 'tailwindcss/colors'
 
 import { type Project } from '~/store/projects'
 
 defineProps<{
   projects: Project[]
   title: string
-  color: typeof TailwindColors
+  color: 'green' | 'blue'
 }>()
 
 const projectsRef = ref()
