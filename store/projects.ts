@@ -94,7 +94,7 @@ export const ml: Project[] = [
 
 export const web: Project[] = [
   {
-    image: '/svg/projects/locknest.svg',
+    image: '/svg/projects/mylo.svg',
     title: 'Mylo',
     description:
       'Mylo is an AI-powered web application that provides newsletter service to individuals and businesses to start their newsletter for their users or customers.',
@@ -114,7 +114,7 @@ export const web: Project[] = [
     },
   },
   {
-    image: '/svg/projects/locknest.svg',
+    image: '/svg/projects/endless-ecoQuest.svg',
     title: 'Endless EcoQuest',
     description:
       'Endless EcoQuest is an immersive endless racing experience built using Three.js and Socket.io.',
