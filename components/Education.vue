@@ -11,6 +11,11 @@
 <script setup>
 const education = [
   {
+    time: '2024',
+    title: 'Master of Computer Application',
+    place: '🏫 Marwari College, Ranchi',
+  },
+  {
     time: 'Septmber 2022',
     title: 'B.Sc. in Computer Application and Cyber Security',
     place: '🏫 Jharkhand Raksha Shakti University, Ranchi',
