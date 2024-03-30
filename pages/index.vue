@@ -39,7 +39,7 @@
 
       <div class="flex justify-end gap-4 mt-12 font-medium">
         <a
-          href="https://drive.google.com/file/d/10heju8Ft0PU8Q4tn48U2hxNuQbNjsOQH/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1nCFJhGU7jVqFIn_WR-eqrAeiDrgCDJkl/view?usp=drive_link"
           download="amit-resume.pdf"
           class="btn py-2 px-6 md:px-8 uppercase text-center relative"
           aria-label="download amit's resume"
