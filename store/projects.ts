@@ -94,6 +94,24 @@ export const ml: Project[] = [
 
 export const web: Project[] = [
   {
+    image: '/svg/projects/botforge.svg',
+    title: 'BotForge',
+    description:
+      'BotForge is a real-time AI application for crafting AI bots, deployable within the application or integrated into other websites via a REST API.',
+    techStack: [
+      'nextjs',
+      'convex',
+      'openai',
+      'pinecone',
+      'nextui',
+      'typescript',
+    ],
+    tags: ['web', 'ai-ml'],
+    url: {
+      github: 'https://github.com/amit-ksh/botforge',
+    },
+  },
+  {
     image: '/svg/projects/mylo.svg',
     title: 'Mylo',
     description:
