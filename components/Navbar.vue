@@ -64,8 +64,12 @@
                 <li
                   v-for="r in routes"
                   :key="r.url"
-                  class="text-white text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500 hover:bg-white focus:bg-white hover:scale-105 focus:text-blue-500 text-center"
-                  :class="route.path === r.url && 'text-blue-600 bg-white'"
+                  class="text-sm md:text-lg rounded-lg border-2 border-white transition hover:text-blue-500 hover:bg-white focus:bg-white hover:scale-105 focus:text-blue-500 text-center"
+                  :class="
+                    route.path === r.url
+                      ? 'text-blue-600 bg-white'
+                      : 'text-white'
+                  "
                 >
                   <NuxtLink v-slot="{ navigate }" :to="r.url">
                     <button

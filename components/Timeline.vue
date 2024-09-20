@@ -13,7 +13,7 @@
         >
           <div class="arrow" aria-hidden></div>
           <time class="text-sm font-exo leading-none">{{ d.time }}</time>
-          <p class="my-2 text-sm text-[#aaa6c3]">
+          <p class="my-2 text-lg text-[#aaa6c3]">
             <strong class="font-bold">{{ d.title }}</strong>
           </p>
           <p
