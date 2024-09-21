@@ -40,8 +40,8 @@ const world = {
   plane: {
     width: 400,
     height: 400,
-    widthSegments: 50,
-    heightSegments: 50,
+    widthSegments: 45,
+    heightSegments: 45,
   },
 }
 const scene = new Scene()

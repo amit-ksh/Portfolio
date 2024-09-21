@@ -13,6 +13,12 @@ import {
 } from 'three'
 import gsap from 'gsap'
 
+const initialColor = {
+  r: 0,
+  g: 0.09,
+  b: 0.4,
+} as const
+
 /**
  * Create the plane mesh using THREE.Mesh
  * @param {Object} world
@@ -56,9 +62,9 @@ export const generatePlane = (planeMesh: any, world: any) => {
       const y = array[i + 1]
       const z = array[i + 2]
 
-      array[i] = x + (Math.random() - 0.5) * 3
-      array[i + 1] = y + (Math.random() - 0.5) * 3
-      array[i + 2] = z + (Math.random() - 0.5) * 3
+      array[i] = x + (Math.random() - 0.5) * 4
+      array[i + 1] = y + (Math.random() - 0.5) * 4
+      array[i + 2] = z + (Math.random() - 0.5) * 4
     }
 
     randomValues.push(Math.random() * Math.PI * 2)
@@ -71,7 +77,7 @@ export const generatePlane = (planeMesh: any, world: any) => {
   const colors = []
   for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
     // r g b -> 0.0 - 1.0
-    colors.push(0, 0.19, 0.4)
+    colors.push(initialColor.r, initialColor.g, initialColor.b)
   }
   planeMesh.geometry.setAttribute(
     'color',
@@ -115,10 +121,10 @@ export const animatePlane = (planeMesh: any, raycaster: any, frame: number) => {
 
   for (let i = 0; i < array.length; i += 3) {
     // x
-    array[i] = originalPosition[i] + Math.cos(frame + randomValues[i]) * 0.007
+    array[i] = originalPosition[i] + Math.cos(frame + randomValues[i]) * 0.01
     // y
     array[i + 1] =
-      originalPosition[i + 1] + Math.sin(frame + randomValues[i + 1]) * 0.002
+      originalPosition[i + 1] + Math.sin(frame + randomValues[i + 1]) * 0.008
   }
   planeMesh.geometry.attributes.position.needsUpdate = true
 
@@ -126,6 +132,11 @@ export const animatePlane = (planeMesh: any, raycaster: any, frame: number) => {
   if (intersects.length > 0) {
     const { color } = intersects[0].object.geometry.attributes
 
+    const hoverColor = {
+      r: 0,
+      g: 0.1,
+      b: 0.9,
+    } as const
     // vertice 1
     color.setX(intersects[0].face.a, 0.1) // red
     color.setY(intersects[0].face.a, 0.5) // green
@@ -139,16 +150,6 @@ export const animatePlane = (planeMesh: any, raycaster: any, frame: number) => {
     color.setY(intersects[0].face.c, 0.5)
     color.setZ(intersects[0].face.c, 1)
 
-    const initialColor = {
-      r: 0,
-      g: 0.19,
-      b: 0.4,
-    }
-    const hoverColor = {
-      r: 0.1,
-      g: 0.5,
-      b: 1,
-    }
     gsap.to(hoverColor, {
       r: initialColor.r,
       g: initialColor.g,
