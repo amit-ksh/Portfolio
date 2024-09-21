@@ -78,7 +78,11 @@ export default defineNuxtConfig({
       'Space+Mono': true,
     },
   },
-
+  nitro: {
+    prerender: {
+      failOnError: false,
+    },
+  },
   compatibilityDate: '2024-09-21',
   runtimeConfig: {
     public: {
