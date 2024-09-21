@@ -140,7 +140,7 @@ export const web: Project[] = [
     tags: ['web'],
     url: {
       github: 'https://github.com/amit-ksh/endless-ecoQuest',
-      website: 'https://stackblitz.com/~/github.com/amit-ksh/endless-ecoQuest/',
+      website: 'https://endless-ecoquest.glitch.me',
     },
   },
   {
@@ -162,16 +162,16 @@ export const web: Project[] = [
       website: 'https://locknest.vercel.app/',
     },
   },
-  {
-    image: '/svg/projects/weatherapp.svg',
-    title: 'the.weather',
-    description:
-      'Weather App is a React web app that shows the weather details from all around the world.',
-    techStack: ['react', 'node', 'chakraui', 'netlify'],
-    tags: ['web'],
-    url: {
-      github: 'https://github.com/amit-ksh/weather-app',
-      website: 'https://your-weatherman.netlify.app/',
-    },
-  },
+  // {
+  //   image: '/svg/projects/weatherapp.svg',
+  //   title: 'the.weather',
+  //   description:
+  //     'Weather App is a React web app that shows the weather details from all around the world.',
+  //   techStack: ['react', 'node', 'chakraui', 'netlify'],
+  //   tags: ['web'],
+  //   url: {
+  //     github: 'https://github.com/amit-ksh/weather-app',
+  //     website: 'https://your-weatherman.netlify.app/',
+  //   },
+  // },
 ]
