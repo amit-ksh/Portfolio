@@ -64,8 +64,12 @@ export default defineNuxtConfig({
   // Modules
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
 
-  postcss: require('./postcss.config'),
-
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   googleFonts: {
     families: {
       'Exo+2': {
@@ -75,6 +79,7 @@ export default defineNuxtConfig({
     },
   },
 
+  compatibilityDate: '2024-09-21',
   runtimeConfig: {
     public: {
       NODE_ENV: process.env.NODE_ENV || 'development',

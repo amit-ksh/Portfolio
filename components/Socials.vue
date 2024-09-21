@@ -4,7 +4,7 @@
       Connect with me!
     </h3>
 
-    <div class="flex justify-between align-middle gap-3">
+    <div class="grid grid-cols-3 gap-2">
       <a
         v-for="social in socials"
         :key="social.name"
@@ -21,24 +21,29 @@
 <script setup>
 const socials = [
   {
-    name: 'LinkedIn',
-    url: 'https://linkedin.com/in/amit-ksh',
-    logo: 'linkedin',
-  },
-  {
-    name: 'Twitter',
-    url: 'https://twitter.com/amit__ksh',
-    logo: 'twitter',
+    name: 'Github',
+    url: 'https://github.com/amit-ksh',
+    logo: 'github',
   },
   {
     name: 'CodePen.io',
     url: 'https://codepen.io/amit-ksh',
     logo: 'codepen',
+  }, 
+    {
+      name: 'LinkedIn',
+      url: 'https://linkedin.com/in/amit-ksh',
+      logo: 'linkedin',
+    },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/amit__ksh',
+    logo: 'instagram',
   },
   {
-    name: 'Github',
-    url: 'https://github.com/amit-ksh',
-    logo: 'github',
+    name: 'Twitter',
+    url: 'https://twitter.com/amit__ksh',
+    logo: 'twitter',
   },
 ]
 </script>
