@@ -11,7 +11,14 @@
 <script setup lang="ts">
 const achievement = [
   {
-    time: 'June 2024 - Present',
+    time: 'December 2024 - Present',
+    title: 'Software Development Engineer',
+    details: {
+      company: '9AI',
+    },
+  },
+  {
+    time: 'June 2024 - November 2024',
     title: 'Frontend Developer Intern',
     details: {
       company: '9AI',
